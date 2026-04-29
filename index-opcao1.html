@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ielenpets - Best Pals for Your Paw Pals</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#f97316', /* Ielenpets Orange */
+                            green: '#0b3d3b',  /* Darker Forest Green for text */
+                            bg: '#f0fdfa',     /* Very Light Green Background */
+                            section: '#ccfbf1' /* Light Green for sections */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f0fdfa;
+        }
+        
+        /* Custom image masking for organic shapes */
+        .blob-mask-1 {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .blob-mask-2 {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        
+        /* Paw print decoration animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-green antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-1 flex justify-between items-center relative z-50">
+        <div class="flex items-center">
+            <!-- Logo Ielenpets -->
+            <img src="Logo.png" alt="Ielenpets Logo" class="h-16 object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/280x84/f4efe6/f97316?text=IELENPETS';">
+        </div>
+        
+        <nav class="hidden md:flex gap-10 text-sm font-medium text-brand-green">
+            <a href="#" class="hover:text-brand-orange transition-colors">Início</a>
+            <a href="#produtos" class="hover:text-brand-orange transition-colors">Produtos</a>
+            <a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a>
+            <a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre</a>
+            <a href="#depoimentos" class="hover:text-brand-orange transition-colors">Depoimentos</a>
+        </nav>
+        
+        <button class="bg-brand-section w-10 h-10 flex items-center justify-center rounded-xl text-brand-green hover:bg-brand-orange hover:text-white transition-all shadow-sm">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-40 lg:pb-56 flex items-center justify-center min-h-[80vh] bg-white">
+        <!-- Decorative Paws -->
+        <div class="absolute top-1/4 left-1/4 text-brand-section opacity-60 animate-float" style="animation-delay: 0s;">
+            <i class="fa-solid fa-paw text-3xl"></i>
+        </div>
+        <div class="absolute bottom-1/3 right-1/4 text-brand-section opacity-60 animate-float" style="animation-delay: 2s;">
+            <i class="fa-solid fa-paw text-4xl"></i>
+        </div>
+
+        <!-- Left Image (Cat) -->
+        <div class="absolute bottom-10 left-0 w-48 md:w-80 lg:w-96 transform -translate-x-1/4 z-10 hidden sm:block">
+             <img src="Fotos opção 01/gato hero.png" alt="Cute Cat" class="w-full h-auto">
+        </div>
+        
+        <!-- Right Image (Dog) -->
+        <div class="absolute top-10 right-0 w-48 md:w-80 lg:w-96 transform translate-x-1/4 z-10 hidden sm:block">
+             <img src="Fotos opção 01/cao hero.png" alt="Cute Dog" class="w-full h-auto">
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6 relative z-20 text-center max-w-3xl">
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-brand-green font-bold mb-6 leading-[1.1]">
+                Melhores Produtos<br>para seus Pets
+            </h1>
+            <p class="text-brand-green mb-10 max-w-xl mx-auto text-lg">
+                A Ielenpets oferece as melhores soluções em nutrição e cuidado animal, garantindo a alegria e a saúde de quem traz tanta vida para a sua.
+            </p>
+            <button class="bg-brand-orange text-white px-10 py-4 rounded-full font-medium hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1">
+                Ver Produtos
+            </button>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
+            <svg class="relative block w-full h-[60px] md:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.26,192.39,101.44Z" fill="#ccfbf1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="bg-brand-section py-20 pb-32 relative">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="font-serif text-4xl text-brand-green text-center font-bold mb-16">Nossas Soluções em Cuidados</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bone text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Alimentação</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Rações premium e super premium para garantir a melhor nutrição e vitalidade.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-stethoscope text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Saúde Vet</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Medicamentos, antipulgas e suplementos das marcas mais confiáveis do mercado.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house-chimney text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Conforto</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Caminhas, casinhas e arranhadores pensados para o máximo bem-estar no lar.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bath text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Higiene & Spa</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Shampoos, condicionadores e produtos de limpeza para deixar seu pet sempre cheiroso.</p>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-baseball text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Brinquedos</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Diversão garantida com brinquedos interativos que estimulam a mente e o corpo.</p>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl flex gap-5 items-start shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-bg flex items-center justify-center shrink-0 text-brand-orange group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-brand-green mb-2 text-lg">Agropecuária</h3>
+                        <p class="text-sm text-brand-green/80 leading-relaxed">Linha completa de produtos para grandes animais e suprimentos rurais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider Bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
+            <svg class="relative block w-full h-[60px] md:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.26,192.39,101.44Z" fill="#f0fdfa"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="bg-white py-24 relative">
+        <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 relative flex items-center justify-center">
+                <img src="Fotos opção 01/cao_meio.png" alt="Cachorro feliz" class="w-full max-w-md h-auto object-contain">
+            </div>
+
+            <div class="md:w-1/2">
+                <h2 class="font-serif text-4xl lg:text-5xl text-brand-green font-bold mb-6 leading-tight">
+                    Dedicados ao<br>Bem-Estar dos seus<br>Pets Amados
+                </h2>
+                <p class="text-brand-green leading-relaxed mb-6 text-lg">
+                    A Ielenpets nasceu da paixão por animais. Somos mais que uma distribuidora; somos parceiros na jornada de cuidar de quem não pede nada em troca, além de carinho.
+                </p>
+                <p class="text-brand-green leading-relaxed text-lg">
+                    Trabalhamos com fornecedores rigorosamente selecionados para trazer inovações e produtos que realmente façam a diferença na qualidade de vida dos animais, sejam eles pets de estimação ou de produção agropecuária.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="bg-white py-24 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-section/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-brand-orange font-semibold tracking-wider uppercase text-sm">Nossa Seleção Premium</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl text-brand-green font-bold mt-2 leading-tight">
+                        Destaques da Coleção
+                    </h2>
+                    <p class="text-brand-green/70 mt-4 text-lg">
+                        Produtos escolhidos a dedo para garantir saúde, diversão e conforto.
+                    </p>
+                </div>
+                <div class="flex gap-3 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
+                    <button class="px-6 py-2 rounded-full bg-brand-orange text-white text-sm font-medium whitespace-nowrap shadow-md shadow-orange-500/20">Todos</button>
+                    <button class="px-6 py-2 rounded-full bg-brand-section text-brand-green text-sm font-medium whitespace-nowrap hover:bg-brand-orange hover:text-white transition-all">Cães</button>
+                    <button class="px-6 py-2 rounded-full bg-brand-section text-brand-green text-sm font-medium whitespace-nowrap hover:bg-brand-orange hover:text-white transition-all">Gatos</button>
+                    <button class="px-6 py-2 rounded-full bg-brand-section text-brand-green text-sm font-medium whitespace-nowrap hover:bg-brand-orange hover:text-white transition-all">Acessórios</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group relative bg-brand-bg rounded-3xl p-4 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-green/5 hover:-translate-y-2">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
+                        <span class="absolute top-3 left-3 bg-brand-orange text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter z-20">Premium</span>
+                        <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog Food" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-brand-orange text-xs font-semibold uppercase tracking-wide">Nutrição</span>
+                            <div class="flex text-yellow-400 text-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-brand-green text-lg mb-1 group-hover:text-brand-orange transition-colors">Ração Ielen Organic</h3>
+                        <p class="text-sm text-brand-green/60 mb-4 line-clamp-1">Equilíbrio perfeito para cães adultos</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-brand-green">R$ 189,90</span>
+                            <button class="w-10 h-10 rounded-full bg-white text-brand-green flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group relative bg-brand-bg rounded-3xl p-4 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-green/5 hover:-translate-y-2">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
+                        <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cat Food" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-brand-orange text-xs font-semibold uppercase tracking-wide">Gatos</span>
+                            <div class="flex text-yellow-400 text-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-brand-green text-lg mb-1 group-hover:text-brand-orange transition-colors">Petiscos Gourmet</h3>
+                        <p class="text-sm text-brand-green/60 mb-4 line-clamp-1">O sabor que seu gato merece</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-brand-green">R$ 45,00</span>
+                            <button class="w-10 h-10 rounded-full bg-white text-brand-green flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group relative bg-brand-bg rounded-3xl p-4 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-green/5 hover:-translate-y-2">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
+                        <span class="absolute top-3 left-3 bg-brand-green text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter z-20">Novo</span>
+                        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Bed" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-brand-orange text-xs font-semibold uppercase tracking-wide">Conforto</span>
+                            <div class="flex text-yellow-400 text-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-brand-green text-lg mb-1 group-hover:text-brand-orange transition-colors">Cama Cloud Velvet</h3>
+                        <p class="text-sm text-brand-green/60 mb-4 line-clamp-1">O máximo de maciez e design</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-brand-green">R$ 320,00</span>
+                            <button class="w-10 h-10 rounded-full bg-white text-brand-green flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group relative bg-brand-bg rounded-3xl p-4 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-green/5 hover:-translate-y-2">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Toy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-brand-orange text-xs font-semibold uppercase tracking-wide">Diversão</span>
+                            <div class="flex text-yellow-400 text-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-brand-green text-lg mb-1 group-hover:text-brand-orange transition-colors">Brinquedo Corda Eco</h3>
+                        <p class="text-sm text-brand-green/60 mb-4 line-clamp-1">Resistente e sustentável</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-brand-green">R$ 39,90</span>
+                            <button class="w-10 h-10 rounded-full bg-white text-brand-green flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-flex items-center gap-2 text-brand-orange font-bold hover:gap-4 transition-all group">
+                    Explorar todo o catálogo <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section (Bento Grid) -->
+    <section class="bg-brand-section py-24 relative">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="font-serif text-4xl text-brand-green text-center font-bold mb-16">Nossos Valores</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:h-[550px]">
+                <!-- Compassion (Tall) -->
+                <div class="relative rounded-2xl overflow-hidden md:col-span-1 md:row-span-2 group shadow-sm">
+                    <img src="Fotos opção 01/vet_cao_gato.png" alt="Veterinarian" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-6 left-6 border border-white/50 bg-white/10 backdrop-blur-md text-white rounded-full px-5 py-2 text-sm font-medium">Compaixão</div>
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <p class="text-white text-base leading-relaxed">Tratamos cada vida com empatia, oferecendo soluções que garantem conforto e promovem o bem-estar animal acima de tudo.</p>
+                    </div>
+                </div>
+                
+                <!-- Reliability & Trust -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:col-span-2">
+                    <div class="relative rounded-2xl overflow-hidden h-[260px] group shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dogs playing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                         <div class="absolute top-6 left-6 border border-white/50 bg-white/10 backdrop-blur-md text-white rounded-full px-5 py-2 text-sm font-medium">Qualidade</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden h-[260px] group shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cat looking up" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                         <div class="absolute top-6 left-6 border border-white/50 bg-white/10 backdrop-blur-md text-white rounded-full px-5 py-2 text-sm font-medium">Confiança</div>
+                    </div>
+                </div>
+
+                <!-- Community -->
+                <div class="relative rounded-2xl overflow-hidden md:col-span-2 h-[260px] group shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Child with dog" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-6 left-6 border border-white/50 bg-white/10 backdrop-blur-md text-white rounded-full px-5 py-2 text-sm font-medium">Comunidade</div>
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <p class="text-white text-base max-w-lg leading-relaxed">Apoiamos a rede de amantes de pets, fornecendo o melhor para seus companheiros e fortalecendo laços de carinho.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="bg-brand-bg py-24 relative overflow-hidden">
+        <!-- Background element -->
+        <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-section/50 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="container mx-auto px-6 max-w-6xl flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-1/3 pt-10">
+                <div class="text-brand-orange mb-6">
+                    <i class="fa-solid fa-quote-left text-5xl opacity-50"></i>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-brand-green font-bold mb-6 leading-tight">Histórias Reais de Famílias Ielenpets</h2>
+                <p class="text-brand-green/80">Veja o que nossos clientes dizem sobre a qualidade e o carinho no nosso atendimento.</p>
+            </div>
+            
+            <div class="lg:w-2/3 flex flex-col gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
+                    <p class="text-brand-green flex-1 text-lg font-serif italic leading-relaxed">"A Ielenpets transformou a maneira como compro ração. A variedade e a qualidade dos produtos são excepcionais. Recomendo muito!"</p>
+                    <div class="flex items-center gap-4 min-w-[160px] justify-end">
+                        <div class="text-right hidden sm:block">
+                            <p class="font-bold text-brand-green text-sm">Amanda L.</p>
+                            <p class="text-xs text-brand-orange">Tutora da Mel</p>
+                        </div>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-14 h-14 rounded-full object-cover border-2 border-brand-section">
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                 <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
+                    <p class="text-brand-green flex-1 text-lg font-serif italic leading-relaxed">"Ótimo atendimento e entrega rápida. Meu cachorro adorou os petiscos novos. É minha distribuidora de confiança agora."</p>
+                    <div class="flex items-center gap-4 min-w-[160px] justify-end">
+                        <div class="text-right hidden sm:block">
+                            <p class="font-bold text-brand-green text-sm">Marcos T.</p>
+                            <p class="text-xs text-brand-orange">Tutor do Max</p>
+                        </div>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-14 h-14 rounded-full object-cover border-2 border-brand-section">
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                 <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between">
+                    <p class="text-brand-green flex-1 text-lg font-serif italic leading-relaxed">"Sempre encontro tudo que preciso para meus gatos. Preços justos e produtos das melhores marcas do mercado."</p>
+                    <div class="flex items-center gap-4 min-w-[160px] justify-end">
+                        <div class="text-right hidden sm:block">
+                            <p class="font-bold text-brand-green text-sm">Juliana R.</p>
+                            <p class="text-xs text-brand-orange">Tutora do Simba</p>
+                        </div>
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-14 h-14 rounded-full object-cover border-2 border-brand-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="bg-brand-section py-20 relative">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="font-serif text-3xl text-brand-green text-center font-bold mb-12">Nossos Parceiros de Confiança</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-50 hover:opacity-100 transition-opacity duration-300">
+                <!-- Generic partner placeholders using FontAwesome and Text -->
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-leaf text-brand-orange"></i> EcoPet
+                </div>
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-shield-cat text-brand-orange"></i> SafeVet
+                </div>
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-bowl-food text-brand-orange"></i> NutriDog
+                </div>
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-heart-pulse text-brand-orange"></i> VitaPet
+                </div>
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-cow text-brand-orange"></i> AgroTech
+                </div>
+                <div class="flex items-center gap-2 font-bold text-xl text-brand-green grayscale hover:grayscale-0 transition-all cursor-default">
+                    <i class="fa-solid fa-feather text-brand-orange"></i> BioAves
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-brand-bg pt-24 pb-0 relative overflow-hidden">
+        <!-- Decorative Paw -->
+        <div class="absolute top-10 right-10 text-brand-section text-6xl opacity-40 rotate-12">
+            <i class="fa-solid fa-paw"></i>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-12 md:mb-0 z-10 pr-0 md:pr-10">
+                <h2 class="font-serif text-4xl lg:text-5xl text-brand-green font-bold mb-6 leading-tight">
+                    Pronto para Dar o Melhor Cuidado ao seu Pet? Contate-nos Hoje!
+                </h2>
+                <button class="bg-brand-orange text-white px-10 py-4 rounded-full font-medium hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1">
+                    Fale Conosco
+                </button>
+            </div>
+            <div class="md:w-1/2 relative flex justify-end items-end z-10 -mb-2">
+                <img src="Fotos opção 01/cao_gato-footer.png" alt="Happy Golden Retriever" class="h-[500px] md:h-[650px] object-contain object-bottom" style="-webkit-mask-image: radial-gradient(circle at 50% 45%, black 20%, transparent 95%); mask-image: radial-gradient(circle at 50% 45%, black 20%, transparent 95%);">
+            </div>
+        </div>
+
+        <!-- Wave Divider Bottom connecting to Footer -->
+        <div class="relative w-full overflow-hidden leading-none z-0 -mt-10">
+            <svg class="relative block w-full h-[90px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" preserveAspectRatio="none">
+                <path d="M0,20 C100,5 200,35 300,20 C400,5 500,35 600,20 C700,5 800,35 900,20 C1000,5 1100,35 1200,20 L1200,90 L0,90 Z" fill="#ccfbf1" fill-opacity="0.25"/>
+                <path d="M0,38 C150,22 300,52 450,38 C600,22 750,52 900,38 C1050,22 1150,48 1200,42 L1200,90 L0,90 Z" fill="#ccfbf1" fill-opacity="0.5"/>
+                <path d="M0,54 C100,40 260,65 420,54 C580,42 740,65 900,54 C1020,44 1120,60 1200,56 L1200,90 L0,90 Z" fill="#ccfbf1" fill-opacity="0.75"/>
+                <path d="M0,70 C150,58 360,78 560,68 C760,58 980,78 1200,68 L1200,90 L0,90 Z" fill="#ccfbf1"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-section pt-12 pb-8 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <!-- Brand Info -->
+                <div>
+                    <img src="Logo.png" alt="Ielenpets Logo" class="h-24 object-contain mb-6" onerror="this.onerror=null; this.src='https://via.placeholder.com/240x72/fdfbf7/f97316?text=IELENPETS';">
+                    <p class="text-sm text-brand-green leading-relaxed">
+                        Distribuindo as melhores marcas e garantindo o bem-estar do seu pet e da sua fazenda.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-brand-green mb-6 font-serif text-lg">Links Rápidos</h4>
+                    <ul class="space-y-3 text-sm text-brand-green">
+                        <li><a href="#" class="hover:text-brand-orange transition-colors">Início</a></li>
+                        <li><a href="#produtos" class="hover:text-brand-orange transition-colors">Produtos</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre Nós</a></li>
+                        <li><a href="#depoimentos" class="hover:text-brand-orange transition-colors">Depoimentos</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-brand-green mb-6 font-serif text-lg">Contato</h4>
+                    <ul class="space-y-3 text-sm text-brand-green">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-orange"></i> (11) 99999-9999</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-orange"></i> contato@ielenpets.com.br</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-brand-orange mt-1"></i> Av. Principal, 1000 - Centro<br>São Paulo, SP</li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-brand-green mb-6 font-serif text-lg">Nossa Comunidade</h4>
+                    <p class="text-sm text-brand-green mb-4">Inscreva-se para receber novidades, dicas e ofertas exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-3 w-full rounded-l-full border-none focus:outline-none focus:ring-2 focus:ring-brand-orange bg-white text-sm" required>
+                        <button type="submit" class="bg-brand-orange text-white px-6 py-3 rounded-r-full hover:bg-orange-600 transition-colors font-medium">
+                            Assinar
+                        </button>
+                    </form>
+                    
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center hover:bg-brand-orange transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center hover:bg-brand-orange transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center hover:bg-brand-orange transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-sm text-brand-green/80 pt-8 border-t border-gray-300">
+                &copy; 2026 Ielenpets. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

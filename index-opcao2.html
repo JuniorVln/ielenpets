@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ielenpets - Excelência em Cuidado Animal</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#FFFCF2',  /* Soft Cream Background from Print */
+                            teal: '#14b8a6',   /* Teal primary accent */
+                            dark: '#1a2b3c'    /* Dark navy for headings */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1280px',
+                            '2xl': '1440px',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .btn-primary {
+            @apply bg-brand-teal text-white px-8 py-3 rounded-md font-semibold hover:bg-teal-600 transition-all shadow-lg shadow-teal-500/20 active:scale-95;
+        }
+        .btn-outline {
+            @apply border-2 border-brand-teal text-brand-teal px-8 py-3 rounded-md font-semibold hover:bg-brand-teal hover:text-white transition-all active:scale-95;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-top: 9rem;
+                padding-bottom: 9rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white py-2 hidden lg:block">
+        <div class="container flex justify-between items-center text-xs font-medium">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-teal"></i> (11) 99999-9999</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-teal"></i> contato@ielenpets.com.br</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-teal transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-teal transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-teal transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-sticky bg-white relative z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Logo.png" alt="Ielenpets" class="h-14 lg:h-16 w-auto object-contain">
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-bold tracking-tight text-brand-dark uppercase">
+                <a href="#" class="hover:text-brand-teal transition-colors border-b-2 border-transparent hover:border-brand-teal py-1">Início</a>
+                <a href="#produtos" class="hover:text-brand-teal transition-colors border-b-2 border-transparent hover:border-brand-teal py-1">Produtos</a>
+                <a href="#servicos" class="hover:text-brand-teal transition-colors border-b-2 border-transparent hover:border-brand-teal py-1">Serviços</a>
+                <a href="#sobre" class="hover:text-brand-teal transition-colors border-b-2 border-transparent hover:border-brand-teal py-1">Sobre</a>
+                <a href="#depoimentos" class="hover:text-brand-teal transition-colors border-b-2 border-transparent hover:border-brand-teal py-1">Depoimentos</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <button class="bg-gray-100 p-2 rounded-full text-brand-dark hover:bg-brand-teal hover:text-white transition-all">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+                <a href="#contato" class="hidden sm:block bg-brand-teal text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-teal-600 transition-all shadow-md shadow-teal-500/20">
+                    Fale Conosco
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-brand-light relative min-h-[calc(100vh-110px)] flex items-center pb-16 lg:pb-20 pt-4 lg:pt-0">
+        <div class="container">
+            <div class="flex flex-col lg:flex-row items-center gap-12 mt-0">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-center lg:text-left relative z-20">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-brand-dark leading-[1.1] mb-8">
+                        Melhores Produtos <br class="hidden lg:block"> <span class="text-brand-teal">para seus Pets</span>
+                    </h1>
+                    <p class="text-gray-500 text-lg md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                        A Ielenpets oferece as melhores soluções em nutrição e cuidado animal, garantindo a alegria e a saúde de quem traz tanta vida para a sua.
+                    </p>
+                    
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                        <a href="#produtos" class="bg-brand-teal text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-teal-600 transition-all shadow-xl shadow-teal-500/20 active:scale-95">
+                            Ver Produtos
+                        </a>
+                        <button class="flex items-center gap-4 group">
+                            <span class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg text-brand-teal group-hover:scale-110 transition-transform border border-gray-100">
+                                <i class="fa-solid fa-play ml-1 text-xl"></i>
+                            </span>
+                            <span class="text-brand-dark font-bold text-lg uppercase tracking-wider">Ver Vídeo</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="lg:w-1/2 flex justify-center lg:justify-end relative z-10">
+                    <img src="Fotos opção 02/hero_02.png" alt="Professional Veterinarian" class="w-full h-auto relative z-10 max-w-[650px]">
+                    <!-- Decorative element behind image -->
+                    <div class="absolute bottom-0 -right-10 w-64 h-64 bg-brand-teal/20 rounded-full blur-3xl -z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlapping Boxes -->
+    <div class="container relative z-30 -mt-16 md:-mt-20 lg:-mt-24" style="margin-bottom: 6rem;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 shadow-2xl rounded-2xl overflow-hidden">
+            <!-- Box 1 -->
+            <div class="bg-white p-10 lg:p-12 flex flex-col items-center text-center border-r border-gray-100 hover:bg-gray-50 transition-colors">
+                <div class="text-brand-teal text-4xl mb-6">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-4">Suporte Especializado</h4>
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Estamos sempre prontos para ajudar você a escolher o melhor para seu pet.
+                </p>
+            </div>
+            <!-- Box 2 -->
+            <div class="bg-white p-10 lg:p-12 flex flex-col items-center text-center border-r border-gray-100 hover:bg-gray-50 transition-colors">
+                <div class="text-brand-teal text-4xl mb-6">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-4">Curadoria Profissional</h4>
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Produtos selecionados por profissionais experientes que entendem as necessidades reais.
+                </p>
+            </div>
+            <!-- Box 3 (Accent) -->
+            <div class="bg-brand-teal p-10 lg:p-12 flex flex-col items-center text-center text-white relative overflow-hidden">
+                <div class="absolute -bottom-4 -right-4 text-white/10 text-9xl">
+                    <i class="fa-solid fa-laptop-medical"></i>
+                </div>
+                <div class="text-4xl mb-6 relative z-10">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-4 relative z-10">Consultoria Online</h4>
+                <p class="text-white/90 leading-relaxed text-sm mb-8 relative z-10">
+                    Dúvidas sobre nutrição ou produtos? Nossos consultores estão online para você.
+                </p>
+                <a href="#contato" class="bg-brand-dark text-white px-8 py-3 rounded-md font-bold hover:bg-gray-800 transition-all flex items-center gap-2 text-sm relative z-10 shadow-lg">
+                    Agendar Agora <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section id="servicos" class="bg-gray-50" style="padding-top: 7rem; padding-bottom: 7rem;">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto" style="margin-bottom: 4rem;">
+                <h2 class="text-sm font-bold text-brand-teal uppercase tracking-[0.2em] mb-4">Nossas Soluções</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6">Dedicados ao Bem-Estar dos seus Pets Amados</h3>
+                <p class="text-gray-500 text-lg">Soluções completas para todas as necessidades do seu animal, do pet de estimação ao rural.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bone text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Alimentação</h4>
+                    <p class="text-gray-600 leading-relaxed">Rações premium e super premium para garantir a melhor nutrição e vitalidade do seu animal.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-stethoscope text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Saúde Vet</h4>
+                    <p class="text-gray-600 leading-relaxed">Medicamentos, antipulgas e suplementos das marcas mais confiáveis para proteção completa.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-dark/5 flex items-center justify-center text-brand-dark mb-8 group-hover:bg-brand-dark group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-house-chimney text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Conforto</h4>
+                    <p class="text-gray-600 leading-relaxed">Caminhas, casinhas e acessórios pensados para o máximo descanso e segurança no lar.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-500 mb-8 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bath text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Higiene & Spa</h4>
+                    <p class="text-gray-600 leading-relaxed">Linha completa de shampoos e cosméticos para manter seu pet sempre limpo e saudável.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center text-pink-500 mb-8 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-baseball text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Brinquedos</h4>
+                    <p class="text-gray-600 leading-relaxed">Itens interativos que estimulam a mente e o corpo, garantindo a diversão necessária.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white p-10 rounded-3xl card-shadow hover:-translate-y-2 transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 mb-8 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-truck-fast text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-4">Agropecuária</h4>
+                    <p class="text-gray-600 leading-relaxed">Linha completa para grandes animais e suprimentos para o setor rural e produção.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="bg-white overflow-hidden" style="padding-top: 9rem; padding-bottom: 9rem; border-top: 2px solid #f3f4f6;">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+                <!-- Left Images (Collage) -->
+                <div class="lg:w-1/2 relative w-full h-[400px] sm:h-[500px] lg:h-[600px] shrink-0">
+                    <!-- Top Right Image -->
+                    <div class="absolute top-0 right-0 w-[65%] h-[70%] bg-gray-200 overflow-hidden z-0">
+                        <img src="Fotos opção 01/vet_cao_gato.png" alt="Vet and pet" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Bottom Left Image -->
+                    <div class="absolute bottom-0 left-0 w-[65%] h-[70%] bg-gray-200 overflow-hidden z-10 border-[12px] border-white">
+                        <img src="Fotos opção 01/cao_meio.png" alt="Happy Dog" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Yellow Paw Print Icon -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[10%] sm:-translate-y-1/2 z-20 text-[#FFC444] text-7xl sm:text-9xl -rotate-12 drop-shadow-xl opacity-90">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                </div>
+                
+                <!-- Right Content -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-brand-teal font-bold mb-3 text-lg">Sobre a Ielenpets</h2>
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">A Saúde Nutricional do Seu Pet é Importante & Nossa Prioridade</h3>
+                    <p class="text-gray-500 mb-10 leading-relaxed text-sm md:text-base">
+                        A Ielenpets nasceu da paixão por animais. Somos mais que uma distribuidora; somos parceiros na jornada de cuidar de quem não pede nada em troca. Trabalhamos com fornecedores selecionados para trazer inovações que fazem a diferença.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mb-10">
+                        <!-- Grid Item 1 -->
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 shrink-0 bg-brand-teal flex items-center justify-center text-white text-2xl">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg leading-tight mb-2">Consultoria Acessível</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Suporte de qualidade para o cuidado ideal.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Item 2 -->
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 shrink-0 bg-[#FFC444] flex items-center justify-center text-white text-2xl">
+                                <i class="fa-solid fa-house-chimney-medical"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg leading-tight mb-2">Estrutura Completa</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Atende todas as necessidades dos pets.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Item 3 -->
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 shrink-0 bg-[#FFC444] flex items-center justify-center text-white text-2xl">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg leading-tight mb-2">Melhor Qualidade</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Produtos certificados pelos profissionais.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid Item 4 -->
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 shrink-0 bg-brand-teal flex items-center justify-center text-white text-2xl">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg leading-tight mb-2">Loja Completa</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Tudo que seu pet precisa, em um lugar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contato" class="inline-block bg-brand-teal text-white px-8 py-3.5 font-bold hover:bg-teal-600 transition-colors shadow-lg shadow-teal-500/20">
+                        Saiba Mais Sobre Nós
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Highlights -->
+    <section id="produtos" class="bg-brand-light" style="padding-top: 9rem; padding-bottom: 9rem; border-top: 2px solid #e5e7eb;">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-sm font-bold text-brand-teal uppercase tracking-[0.2em] mb-4">Destaques</h2>
+                    <h3 class="text-4xl md:text-5xl font-extrabold text-brand-dark">Destaques da Coleção</h3>
+                </div>
+                <div class="flex gap-4">
+                    <button class="bg-white p-3 rounded-full text-brand-dark shadow-md hover:bg-brand-teal hover:text-white transition-all"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="bg-white p-3 rounded-full text-brand-dark shadow-md hover:bg-brand-teal hover:text-white transition-all"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden card-shadow group border border-gray-100 hover:border-brand-teal/30 transition-all">
+                    <div class="aspect-square bg-gray-50 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog Food" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-teal text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Premium</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Nutrição</p>
+                        <h4 class="text-lg font-bold text-brand-dark mb-4 group-hover:text-brand-teal transition-colors">Ração Ielen Organic</h4>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-black text-brand-dark">R$ 189,90</span>
+                            <button class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-brand-teal transition-colors"><i class="fa-solid fa-plus text-sm"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden card-shadow group border border-gray-100 hover:border-brand-teal/30 transition-all">
+                    <div class="aspect-square bg-gray-50 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cat Food" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Gatos</p>
+                        <h4 class="text-lg font-bold text-brand-dark mb-4 group-hover:text-brand-teal transition-colors">Petiscos Gourmet</h4>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-black text-brand-dark">R$ 45,00</span>
+                            <button class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-brand-teal transition-colors"><i class="fa-solid fa-plus text-sm"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden card-shadow group border border-gray-100 hover:border-brand-teal/30 transition-all">
+                    <div class="aspect-square bg-gray-50 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Bed" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-teal text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Novo</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Conforto</p>
+                        <h4 class="text-lg font-bold text-brand-dark mb-4 group-hover:text-brand-teal transition-colors">Cama Cloud Velvet</h4>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-black text-brand-dark">R$ 320,00</span>
+                            <button class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-brand-teal transition-colors"><i class="fa-solid fa-plus text-sm"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden card-shadow group border border-gray-100 hover:border-brand-teal/30 transition-all">
+                    <div class="aspect-square bg-gray-50 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pet Toy" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Diversão</p>
+                        <h4 class="text-lg font-bold text-brand-dark mb-4 group-hover:text-brand-teal transition-colors">Brinquedo Corda Eco</h4>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-black text-brand-dark">R$ 39,90</span>
+                            <button class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-brand-teal transition-colors"><i class="fa-solid fa-plus text-sm"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#" class="btn-primary">Ver Todos os Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="relative py-28 lg:py-44 bg-gray-900 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cbcb8127?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-brand-dark/85"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-sm font-bold text-[#FFC444] uppercase tracking-wider mb-4">Depoimentos</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-6">O que Nossos Clientes Dizem</h3>
+                <p class="text-white/80 text-lg">
+                    A Ielenpets transforma o cuidado com os animais. Veja as histórias reais de quem confia na nossa qualidade e atendimento todos os dias.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 md:p-10 flex flex-col h-full shadow-xl">
+                    <p class="text-gray-500 mb-10 text-sm md:text-base leading-relaxed flex-grow">
+                        "A Ielenpets transformou a maneira como compro ração e medicamentos. A variedade e a qualidade dos produtos são excepcionais. Recomendo muito!"
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark text-sm">Amanda L.</p>
+                                <p class="text-xs text-gray-400">Tutora da Mel</p>
+                            </div>
+                        </div>
+                        <div class="text-brand-teal text-5xl leading-none">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 md:p-10 flex flex-col h-full shadow-xl">
+                    <p class="text-gray-500 mb-10 text-sm md:text-base leading-relaxed flex-grow">
+                        "Ótimo atendimento e entrega rápida. Meu cachorro adorou os petiscos novos. É minha distribuidora de confiança agora, tanto para os cães quanto para os gatos."
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark text-sm">Marcos T.</p>
+                                <p class="text-xs text-gray-400">Tutor do Max</p>
+                            </div>
+                        </div>
+                        <div class="text-brand-teal text-5xl leading-none">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 md:p-10 flex flex-col h-full shadow-xl">
+                    <p class="text-gray-500 mb-10 text-sm md:text-base leading-relaxed flex-grow">
+                        "Sempre encontro tudo que preciso para meus animais. Preços justos, produtos das melhores marcas do mercado e um suporte incrível quando preciso tirar dúvidas."
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark text-sm">Juliana R.</p>
+                                <p class="text-xs text-gray-400">Criadora</p>
+                            </div>
+                        </div>
+                        <div class="text-brand-teal text-5xl leading-none">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="bg-brand-dark py-20 lg:py-28">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-12 lg:gap-24 opacity-60 hover:opacity-100 transition-opacity duration-300">
+                <div class="flex items-center gap-2 font-black text-2xl text-white"><i class="fa-solid fa-leaf text-brand-teal"></i> EcoPet</div>
+                <div class="flex items-center gap-2 font-black text-2xl text-white"><i class="fa-solid fa-shield-cat text-brand-teal"></i> SafeVet</div>
+                <div class="flex items-center gap-2 font-black text-2xl text-white"><i class="fa-solid fa-bowl-food text-brand-teal"></i> NutriDog</div>
+                <div class="flex items-center gap-2 font-black text-2xl text-white"><i class="fa-solid fa-heart-pulse text-brand-teal"></i> VitaPet</div>
+                <div class="flex items-center gap-2 font-black text-2xl text-white"><i class="fa-solid fa-cow text-brand-teal"></i> AgroTech</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 lg:py-36 bg-brand-teal relative overflow-hidden">
+        <div class="container relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-10 leading-tight">
+                Pronto para Dar o Melhor Cuidado ao seu Pet?
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#" class="bg-brand-dark text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-brand-dark/90 transition-all shadow-2xl">
+                    Fale Conosco agora
+                </a>
+                <a href="#" class="bg-white text-brand-teal px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-2xl">
+                    Ver Catálogo
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Paw -->
+        <div class="absolute -bottom-20 -right-20 text-[20rem] text-white/10 rotate-12 -z-0">
+            <i class="fa-solid fa-paw"></i>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-12 border-t border-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div>
+                    <img src="Logo.png" alt="Ielenpets Logo" class="h-16 mb-8">
+                    <p class="text-gray-500 leading-relaxed">
+                        Distribuindo as melhores marcas e garantindo o bem-estar do seu pet e da sua fazenda com qualidade e compromisso.
+                    </p>
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-dark hover:bg-brand-teal hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-dark hover:bg-brand-teal hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-dark hover:bg-brand-teal hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-8">Links Rápidos</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li><a href="#" class="hover:text-brand-teal transition-colors">Início</a></li>
+                        <li><a href="#produtos" class="hover:text-brand-teal transition-colors">Produtos</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-teal transition-colors">Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-brand-teal transition-colors">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-8">Contato</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-brand-teal"></i> (11) 99999-9999</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-brand-teal"></i> contato@ielenpets.com.br</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-brand-teal mt-1"></i> Av. Principal, 1000 - Centro, SP</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-8">Newsletter</h4>
+                    <p class="text-gray-500 mb-6 font-medium">Receba dicas e ofertas exclusivas no seu e-mail.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Seu melhor e-mail" class="bg-brand-light border border-gray-200 px-6 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all">
+                        <button class="bg-brand-dark text-white py-3 rounded-xl font-bold hover:bg-brand-dark/90 transition-all">Assinar agora</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400 font-medium text-sm">
+                <p>&copy; 2026 Ielenpets. Todos os direitos reservados.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-brand-dark">Termos de Uso</a>
+                    <a href="#" class="hover:text-brand-dark">Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
