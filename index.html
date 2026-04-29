@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Ielenpets - Opções de Design</title>
+    <style>
+        :root {
+            --primary: #2d5a27;
+            --secondary: #f4f1ea;
+            --text: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .options {
+            display: grid;
+            gap: 1rem;
+        }
+        .option-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .option-card:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(45, 90, 39, 0.3);
+        }
+        .option-card span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+            margin-top: 0.2rem;
+            opacity: 0.8;
+        }
+        .logo {
+            width: 120px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Logo.png" alt="Ielenpets Logo" class="logo">
+        <h1>Showcase de Design</h1>
+        <p>Escolha uma das opções abaixo para visualizar as propostas de layout para o novo site da Ielenpets.</p>
+        
+        <div class="options">
+            <a href="index-opcao3.html" class="option-card">
+                Opção 03 (Atual)
+                <span>Layout refinado com largura controlada e foco em alinhamento.</span>
+            </a>
+            <a href="index-opcao2.html" class="option-card">
+                Opção 02
+                <span>Design moderno com seções bem espaçadas e depoimentos.</span>
+            </a>
+            <a href="index-opcao1.html" class="option-card">
+                Opção 01
+                <span>Proposta inicial com paleta de cores verde personalizada.</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
