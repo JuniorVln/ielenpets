@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Habitat ReptilCare - Ielenpets</title>
+    <meta name="description" content="Estrutura base para terrários com decoração e abrigo. Ideal para répteis de pequeno e médio porte.">
+    <meta name="author" content="Ielenpets">
+    <meta property="og:title" content="Kit Habitat ReptilCare - Ielenpets">
+    <meta property="og:description" content="Estrutura base para terrários com decoração e abrigo.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { kenneli: { bg: '#effaf8', dark: '#24716d', darker: '#123f3c', accent: '#7ec9c4', light: '#d7f1ef', white: '#f7fffd' } }, fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] } } } }
+    </script>
+    <style>
+        body { background-color: #effaf8; color: #24716d; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; }
+        .gallery-thumb.active { border-color: #24716d; opacity: 1; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden relative bg-kenneli-bg">
+    <i class="fa-solid fa-paw absolute top-36 left-8 opacity-5 text-[150px] text-kenneli-dark -rotate-12 z-0"></i>
+    <i class="fa-solid fa-paw absolute top-[760px] right-20 opacity-5 text-[190px] text-kenneli-dark rotate-45 z-0"></i>
+
+    <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
+        <a href="index.html" class="flex items-center"><img src="Logo.png" alt="Ielenpets Logo" class="h-24 object-contain"></a>
+        <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
+            <a href="index.html" class="hover:text-kenneli-accent transition-colors">Início</a>
+            <a href="index.html#solucoes" class="hover:text-kenneli-accent transition-colors">Soluções</a>
+            <a href="index.html#sobre" class="hover:text-kenneli-accent transition-colors">Sobre</a>
+            <a href="catalogo.html" class="hover:text-kenneli-accent transition-colors">Catálogo</a>
+            <a href="index.html#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
+        </nav>
+        <a href="contato.html" class="bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+    </header>
+
+    <main class="relative z-10">
+        <nav class="container max-w-[1440px] mx-auto px-6 py-6">
+            <ol class="flex items-center gap-2 text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">
+                <li><a href="index.html" class="hover:text-kenneli-dark">Início</a></li>
+                <li><i class="fa-solid fa-chevron-right text-[8px]"></i></li>
+                <li><a href="catalogo.html" class="hover:text-kenneli-dark">Catálogo</a></li>
+                <li><i class="fa-solid fa-chevron-right text-[8px]"></i></li>
+                <li><a href="catalogo.html?category=repteis" class="hover:text-kenneli-dark">Répteis</a></li>
+                <li><i class="fa-solid fa-chevron-right text-[8px]"></i></li>
+                <li class="text-kenneli-dark">Kit Habitat ReptilCare</li>
+            </ol>
+        </nav>
+
+        <section class="container max-w-[1440px] mx-auto px-6 pb-20">
+            <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 xl:gap-20">
+                <div class="space-y-6">
+                    <div class="bg-white rounded-[48px] p-3 aspect-square flex items-center justify-center border-[3px] border-kenneli-dark/5 shadow-2xl shadow-kenneli-dark/5 overflow-hidden">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1000&q=80" alt="Kit Habitat ReptilCare" class="w-full h-full object-cover rounded-[38px] hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1000&q=80')" class="gallery-thumb active border-4 border-transparent rounded-3xl overflow-hidden aspect-square bg-white p-2 opacity-60 hover:opacity-100 transition-all">
+                            <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover" alt="Thumb 1">
+                        </button>
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1496302266073-d1e6f3fc3530?auto=format&fit=crop&w=1000&q=80')" class="gallery-thumb border-4 border-transparent rounded-3xl overflow-hidden aspect-square bg-white p-2 opacity-60 hover:opacity-100 transition-all">
+                            <img src="https://images.unsplash.com/photo-1496302266073-d1e6f3fc3530?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover" alt="Thumb 2">
+                        </button>
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?auto=format&fit=crop&w=1000&q=80')" class="gallery-thumb border-4 border-transparent rounded-3xl overflow-hidden aspect-square bg-white p-2 opacity-60 hover:opacity-100 transition-all">
+                            <img src="https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover" alt="Thumb 3">
+                        </button>
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=1000&q=80')" class="gallery-thumb border-4 border-transparent rounded-3xl overflow-hidden aspect-square bg-white p-2 opacity-60 hover:opacity-100 transition-all">
+                            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover" alt="Thumb 4">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Habitat</span>
+                            <span class="text-kenneli-accent text-xl"><i class="fa-solid fa-dragon"></i></span>
+                        </div>
+                        <h1 class="font-heading text-5xl md:text-6xl font-black text-kenneli-dark leading-[0.9] tracking-tight mb-6">
+                            Kit Habitat ReptilCare
+                        </h1>
+                        <p class="text-xl text-kenneli-dark/80 font-medium leading-relaxed">
+                            Estrutura completa para terrários de répteis, incluindo abrigo, decoração natural e elementos de enriquecimento ambiental para o bem-estar do animal.
+                        </p>
+                    </div>
+                    <div class="space-y-8 mb-10">
+                        <div>
+                            <h3 class="text-[11px] uppercase tracking-widest font-black text-kenneli-dark/40 mb-4 flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Descrição do Produto</h3>
+                            <div class="prose text-kenneli-dark/70 font-medium leading-relaxed">
+                                <p>O Kit Habitat ReptilCare é a solução completa para quem deseja criar um ambiente seguro e estimulante para répteis de pequeno e médio porte.</p>
+                                <p class="mt-3">Inclui abrigo resistente, decorações naturais não tóxicas e estrutura de fácil higienização. Compatível com a maioria dos terrários do mercado.</p>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-kenneli-light/50 border-2 border-kenneli-dark/5 rounded-3xl p-6">
+                                <h4 class="font-heading font-black text-kenneli-dark uppercase text-xs tracking-widest mb-4">Características</h4>
+                                <ul class="space-y-3 text-sm font-bold text-kenneli-dark/80">
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-kenneli-accent mt-1"></i> Abrigo Incluso</li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-kenneli-accent mt-1"></i> Decoração Natural</li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-kenneli-accent mt-1"></i> Fácil Higienização</li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-kenneli-accent mt-1"></i> Material Resistente</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border-2 border-kenneli-dark/5 rounded-3xl p-6">
+                                <h4 class="font-heading font-black text-kenneli-dark uppercase text-xs tracking-widest mb-4">Especificações</h4>
+                                <ul class="space-y-2 text-sm font-medium text-kenneli-dark/60">
+                                    <li><span class="font-black text-kenneli-dark/80">Tamanho:</span> M / G</li>
+                                    <li><span class="font-black text-kenneli-dark/80">Linha:</span> Répteis</li>
+                                    <li><span class="font-black text-kenneli-dark/80">Indicação:</span> Todas as idades</li>
+                                    <li><span class="font-black text-kenneli-dark/80">Marca:</span> ReptilCare</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-kenneli-dark/10">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="contato.html" class="flex-1 bg-kenneli-dark text-white px-8 py-5 rounded-[28px] font-black uppercase tracking-widest text-sm hover:bg-kenneli-accent hover:text-kenneli-dark transition-all flex items-center justify-center gap-4 shadow-xl shadow-kenneli-dark/20">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Solicitar Orçamento
+                            </a>
+                            <button onclick="window.history.back()" class="bg-kenneli-light text-kenneli-dark px-8 py-5 rounded-[28px] font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all flex items-center justify-center gap-4 border-2 border-kenneli-dark/5">
+                                <i class="fa-solid fa-arrow-left"></i> Voltar
+                            </button>
+                        </div>
+                        <p class="text-[10px] text-kenneli-dark/40 font-bold uppercase tracking-widest mt-6 text-center italic">* Produto sujeito a disponibilidade de estoque e região de entrega.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-kenneli-light py-24">
+            <div class="container max-w-[1440px] mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                    <div>
+                        <span class="uppercase tracking-widest text-[11px] font-black text-kenneli-dark/50 block mb-2">Sugestões para seu pet</span>
+                        <h2 class="font-heading text-4xl md:text-5xl font-black text-kenneli-dark leading-none">Produtos Semelhantes</h2>
+                    </div>
+                    <a href="catalogo.html" class="text-kenneli-dark font-black uppercase tracking-widest text-xs border-b-2 border-kenneli-accent hover:text-kenneli-accent transition-all">Ver todo catálogo</a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="produto-substrato-smallpet.html" class="bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block group">
+                        <div class="h-56 bg-kenneli-light/50 p-2 flex items-center justify-center relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=500&q=80" loading="lazy" alt="Roedor" class="w-full h-full object-cover rounded-[26px] group-hover:scale-110 transition-transform">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[9px] uppercase tracking-widest font-black text-kenneli-dark/50 block mb-2">Roedores · Habitat</span>
+                            <h3 class="font-heading text-xl font-black text-kenneli-dark mb-4 leading-tight group-hover:text-kenneli-accent transition-colors">Substrato SmallPet Natural</h3>
+                            <div class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-kenneli-accent group-hover:text-kenneli-dark transition-colors">Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    <a href="produto-aquavita-flocos.html" class="bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block group">
+                        <div class="h-56 bg-kenneli-light/50 p-2 flex items-center justify-center relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=500&q=80" loading="lazy" alt="Peixe" class="w-full h-full object-cover rounded-[26px] group-hover:scale-110 transition-transform">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[9px] uppercase tracking-widest font-black text-kenneli-dark/50 block mb-2">Peixes · Ração</span>
+                            <h3 class="font-heading text-xl font-black text-kenneli-dark mb-4 leading-tight group-hover:text-kenneli-accent transition-colors">AquaVita Flocos Tropicais</h3>
+                            <div class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-kenneli-accent group-hover:text-kenneli-dark transition-colors">Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    <a href="produto-birdmax-calopsitas.html" class="bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block group">
+                        <div class="h-56 bg-kenneli-light/50 p-2 flex items-center justify-center relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=500&q=80" loading="lazy" alt="Ave" class="w-full h-full object-cover rounded-[26px] group-hover:scale-110 transition-transform">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[9px] uppercase tracking-widest font-black text-kenneli-dark/50 block mb-2">Aves · Ração</span>
+                            <h3 class="font-heading text-xl font-black text-kenneli-dark mb-4 leading-tight group-hover:text-kenneli-accent transition-colors">Mistura BirdMax Calopsitas</h3>
+                            <div class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-kenneli-accent group-hover:text-kenneli-dark transition-colors">Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="bg-kenneli-dark text-white py-12 border-b-[6px] border-kenneli-accent">
+        <div class="container max-w-[1440px] mx-auto px-6 flex flex-wrap justify-around items-center font-heading font-black text-3xl md:text-5xl gap-6">
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Cuidado</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Adoção</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Bem-Estar</span>
+        </div>
+    </div>
+
+    <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 mix-blend-luminosity"><img src="Fotos opção 03/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt=""></div>
+        <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
+            <div><img src="Logo.png" alt="Ielenpets" class="h-28 object-contain mb-8"><h2 class="font-heading text-4xl md:text-5xl font-black leading-[0.9] mb-6">Produtos selecionados para cada pet.</h2><p class="text-white/60 text-sm font-medium max-w-md leading-relaxed">Use o catálogo para encontrar opções e fale conosco para disponibilidade, valores e parceria comercial.</p></div>
+            <div class="grid sm:grid-cols-2 gap-10">
+                <div><h4 class="font-heading font-bold text-2xl mb-4 text-white">Atendimento</h4><p class="text-sm text-white/60 mb-2 font-medium">WhatsApp: (11) 99999-9999</p><p class="text-sm text-white/60 font-medium">Seg-Sex: 09:00 - 18:00</p></div>
+                <div><h4 class="font-heading font-bold text-2xl mb-4 text-white">E-mail</h4><p class="text-sm text-white/60 mb-2 font-medium">contato@ielenpets.com.br</p><p class="text-sm text-white/60 font-medium">parcerias@ielenpets.com.br</p></div>
+                <div><h4 class="font-heading font-bold text-2xl mb-4 text-white">Navegação</h4><div class="flex flex-col gap-2 text-sm text-white/60 font-medium"><a href="index.html" class="hover:text-white transition-colors">Início</a><a href="catalogo.html" class="hover:text-white transition-colors">Catálogo</a><a href="contato.html" class="hover:text-white transition-colors">Contato</a></div></div>
+                <div><h4 class="font-heading font-bold text-2xl mb-4 text-white">Social</h4><div class="flex gap-5 text-xl text-white/60"><a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a><a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a><a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a></div></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function changeImage(element, src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
