@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Ielenpets</title>
+    <meta name="description" content="Entre em contato com a Ielenpets para atendimento, parcerias e dúvidas sobre produtos para pets.">
+    <meta name="author" content="Ielenpets">
+    <meta property="og:title" content="Contato - Ielenpets">
+    <meta property="og:description" content="Fale com a equipe Ielenpets e receba atendimento especializado para cuidar melhor do seu pet.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kenneli: {
+                            bg: '#effaf8',
+                            dark: '#24716d',
+                            darker: '#123f3c',
+                            accent: '#7ec9c4',
+                            light: '#d7f1ef',
+                            white: '#f7fffd'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #effaf8;
+            color: #24716d;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .organic-shape-1 {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+
+        .writing-vertical-rl {
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden relative bg-kenneli-bg">
+
+    <i class="fa-solid fa-paw absolute top-32 left-10 opacity-5 text-[140px] text-kenneli-dark -rotate-12 z-0"></i>
+    <i class="fa-solid fa-paw absolute top-[720px] right-12 opacity-5 text-[180px] text-kenneli-dark rotate-45 z-0"></i>
+
+    <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
+        <a href="index.html" class="flex items-center">
+            <img src="Logo.png" alt="Ielenpets Logo" class="h-24 object-contain">
+        </a>
+
+        <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
+            <a href="index.html" class="hover:text-kenneli-accent transition-colors">Início</a>
+            <a href="index.html#solucoes" class="hover:text-kenneli-accent transition-colors">Soluções</a>
+            <a href="index.html#sobre" class="hover:text-kenneli-accent transition-colors">Sobre</a>
+            <a href="catalogo.html" class="hover:text-kenneli-accent transition-colors">Catálogo</a>
+            <a href="index.html#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
+        </nav>
+
+        <a href="contato.html" class="bg-kenneli-dark text-white px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-accent hover:text-kenneli-dark transition-all">
+            Contato
+        </a>
+    </header>
+
+    <main>
+        <section class="container max-w-[1440px] mx-auto px-6 pt-12 pb-24 relative">
+            <div class="grid lg:grid-cols-[1fr_0.9fr] gap-16 items-center">
+                <div class="relative z-10">
+                    <div class="border-[3px] border-kenneli-dark rounded-3xl p-6 mb-8 inline-block relative">
+                        <i class="fa-solid fa-message absolute -top-4 -left-4 text-3xl text-kenneli-dark bg-kenneli-bg px-2"></i>
+                        <h3 class="font-heading text-xl font-bold text-kenneli-dark">Atendimento Ielenpets</h3>
+                    </div>
+
+                    <h1 class="font-heading text-6xl md:text-7xl lg:text-[5.5rem] font-black text-kenneli-dark leading-[0.9] tracking-tight mb-8">
+                        Fale com <br> a Nossa <br> Equipe
+                    </h1>
+
+                    <p class="text-kenneli-dark/80 text-lg md:text-xl mb-10 max-w-xl font-medium leading-relaxed">
+                        Tire dúvidas, solicite atendimento, envie uma proposta de parceria ou converse com a Ielenpets sobre as melhores soluções para cada pet.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5511999999999" class="bg-kenneli-accent text-kenneli-dark px-8 py-4 rounded-full font-black uppercase tracking-wider text-sm hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chamar no WhatsApp
+                        </a>
+                        <a href="#formulario" class="border-2 border-kenneli-dark text-kenneli-dark px-8 py-4 rounded-full font-black uppercase tracking-wider text-sm hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative min-h-[520px]">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=80" alt="Cães Ielenpets" class="absolute bottom-0 right-0 w-[82%] h-[430px] object-cover rounded-[48px] shadow-2xl border-8 border-kenneli-bg">
+                    <div class="absolute top-4 left-0 bg-kenneli-dark text-white p-8 rounded-[36px] shadow-xl max-w-xs">
+                        <i class="fa-solid fa-headset text-4xl text-kenneli-accent mb-5"></i>
+                        <h2 class="font-heading text-3xl font-black mb-3">Resposta rápida</h2>
+                        <p class="text-white/70 text-sm leading-relaxed font-medium">
+                            Nossa equipe direciona seu contato para o atendimento correto em horário comercial.
+                        </p>
+                    </div>
+                    <div class="absolute bottom-8 left-4 bg-kenneli-accent text-kenneli-dark px-7 py-5 rounded-full shadow-xl font-black uppercase tracking-widest text-xs">
+                        Seg-Sex · 09h às 18h
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container max-w-[1440px] mx-auto px-6 py-20 border-t border-kenneli-dark/10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://wa.me/5511999999999" class="group border-[3px] border-kenneli-dark rounded-[36px] p-8 hover:bg-kenneli-dark hover:text-white transition-colors">
+                    <i class="fa-brands fa-whatsapp text-4xl text-kenneli-accent mb-6"></i>
+                    <h3 class="font-heading text-2xl font-black mb-3">WhatsApp</h3>
+                    <p class="text-sm font-bold opacity-70 mb-2">(11) 99999-9999</p>
+                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-accent">Atendimento direto</span>
+                </a>
+
+                <a href="mailto:contato@ielenpets.com.br" class="group border-[3px] border-kenneli-dark rounded-[36px] p-8 hover:bg-kenneli-dark hover:text-white transition-colors">
+                    <i class="fa-solid fa-envelope text-4xl text-kenneli-accent mb-6"></i>
+                    <h3 class="font-heading text-2xl font-black mb-3">E-mail</h3>
+                    <p class="text-sm font-bold opacity-70 mb-2">contato@ielenpets.com.br</p>
+                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-accent">Dúvidas gerais</span>
+                </a>
+
+                <div class="border-[3px] border-kenneli-dark rounded-[36px] p-8 hover:bg-kenneli-dark hover:text-white transition-colors">
+                    <i class="fa-solid fa-location-dot text-4xl text-kenneli-accent mb-6"></i>
+                    <h3 class="font-heading text-2xl font-black mb-3">Sede</h3>
+                    <p class="text-sm font-bold opacity-70 mb-2">Av. Principal, 1000<br>São Paulo, SP</p>
+                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-accent">Visita com agenda</span>
+                </div>
+
+                <a href="mailto:parcerias@ielenpets.com.br" class="group border-[3px] border-kenneli-dark rounded-[36px] p-8 hover:bg-kenneli-dark hover:text-white transition-colors">
+                    <i class="fa-solid fa-handshake text-4xl text-kenneli-accent mb-6"></i>
+                    <h3 class="font-heading text-2xl font-black mb-3">Parcerias</h3>
+                    <p class="text-sm font-bold opacity-70 mb-2">parcerias@ielenpets.com.br</p>
+                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-accent">Comercial</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="formulario" class="relative bg-kenneli-dark py-24 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1920&q=80" loading="lazy" alt="Atendimento pet" class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity">
+
+            <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid lg:grid-cols-[0.75fr_1fr] gap-16 items-start">
+                <div class="text-white">
+                    <span class="uppercase tracking-widest text-[11px] font-black text-white/50 mb-3 block">FORMULÁRIO</span>
+                    <h2 class="font-heading text-5xl md:text-6xl font-black leading-[0.9] mb-8">
+                        Conte o que você precisa
+                    </h2>
+                    <p class="text-white/75 text-lg leading-relaxed font-medium mb-10">
+                        Envie sua mensagem com o máximo de detalhes possível. Assim conseguimos retornar com a melhor orientação.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-4 text-sm font-bold">
+                            <span class="w-9 h-9 rounded-full bg-kenneli-accent text-kenneli-dark flex items-center justify-center"><i class="fa-solid fa-check"></i></span>
+                            Atendimento para tutores e lojistas
+                        </div>
+                        <div class="flex items-center gap-4 text-sm font-bold">
+                            <span class="w-9 h-9 rounded-full bg-kenneli-accent text-kenneli-dark flex items-center justify-center"><i class="fa-solid fa-check"></i></span>
+                            Encaminhamento para o setor correto
+                        </div>
+                        <div class="flex items-center gap-4 text-sm font-bold">
+                            <span class="w-9 h-9 rounded-full bg-kenneli-accent text-kenneli-dark flex items-center justify-center"><i class="fa-solid fa-check"></i></span>
+                            Retorno em horário comercial
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/your_form_id" method="POST" class="bg-kenneli-bg rounded-[48px] p-8 md:p-12 shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60">
+                            Nome
+                            <input type="text" name="name" required class="rounded-2xl border-2 border-kenneli-dark/15 bg-white px-5 py-4 text-base font-medium normal-case tracking-normal outline-none focus:border-kenneli-accent" placeholder="Seu nome">
+                        </label>
+
+                        <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60">
+                            E-mail
+                            <input type="email" name="email" required class="rounded-2xl border-2 border-kenneli-dark/15 bg-white px-5 py-4 text-base font-medium normal-case tracking-normal outline-none focus:border-kenneli-accent" placeholder="seu@email.com">
+                        </label>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60">
+                            Telefone
+                            <input type="tel" name="phone" class="rounded-2xl border-2 border-kenneli-dark/15 bg-white px-5 py-4 text-base font-medium normal-case tracking-normal outline-none focus:border-kenneli-accent" placeholder="(11) 99999-9999">
+                        </label>
+
+                        <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60">
+                            Assunto
+                            <select name="subject" required class="rounded-2xl border-2 border-kenneli-dark/15 bg-white px-5 py-4 text-base font-medium normal-case tracking-normal outline-none focus:border-kenneli-accent">
+                                <option value="">Selecione</option>
+                                <option value="Atendimento">Atendimento</option>
+                                <option value="Produtos">Produtos</option>
+                                <option value="Parcerias">Parcerias</option>
+                                <option value="Comercial">Comercial</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60 mb-8">
+                        Mensagem
+                        <textarea name="message" required rows="6" class="rounded-3xl border-2 border-kenneli-dark/15 bg-white px-5 py-4 text-base font-medium normal-case tracking-normal outline-none focus:border-kenneli-accent resize-none" placeholder="Como podemos ajudar?"></textarea>
+                    </label>
+
+                    <button type="submit" class="bg-kenneli-accent text-kenneli-dark px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center gap-3">
+                        Enviar Mensagem <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="container max-w-[1440px] mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-[0.8fr_1fr] gap-12 items-center">
+                <div>
+                    <span class="uppercase tracking-widest text-[11px] font-black text-kenneli-dark/50 mb-3 block">LOCALIZAÇÃO</span>
+                    <h2 class="font-heading text-5xl md:text-6xl font-black text-kenneli-dark leading-[0.9] mb-6">
+                        Atendimento com presença próxima
+                    </h2>
+                    <p class="text-kenneli-dark/75 text-lg leading-relaxed font-medium">
+                        Nossa sede atende contatos comerciais, parceiros e fornecedores mediante agendamento. Para dúvidas rápidas, use o WhatsApp ou o formulário.
+                    </p>
+                </div>
+
+                <div class="relative min-h-[360px] rounded-[48px] overflow-hidden bg-kenneli-light border-[3px] border-kenneli-dark">
+                    <div class="absolute top-0 left-0 bottom-0 w-12 bg-kenneli-dark flex items-center justify-center writing-vertical-rl rotate-180 text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                        São Paulo
+                    </div>
+                    <div class="pl-20 pr-10 py-12 h-full flex flex-col justify-center">
+                        <i class="fa-solid fa-map-location-dot text-6xl text-kenneli-dark mb-8"></i>
+                        <h3 class="font-heading text-4xl font-black text-kenneli-dark mb-4">Av. Principal, 1000</h3>
+                        <p class="text-kenneli-dark/70 font-bold mb-8">Centro · São Paulo, SP</p>
+                        <a href="https://www.google.com/maps/search/Av.+Principal,+1000,+Centro,+S%C3%A3o+Paulo,+SP" class="self-start bg-kenneli-dark text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-accent hover:text-kenneli-dark transition-all">
+                            Ver no mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="bg-kenneli-dark text-white py-12 border-b-[6px] border-kenneli-accent">
+        <div class="container max-w-[1440px] mx-auto px-6 flex flex-wrap justify-around items-center font-heading font-black text-3xl md:text-5xl gap-6">
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Cuidado</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Adoção</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Bem-Estar</span>
+        </div>
+    </div>
+
+    <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 mix-blend-luminosity">
+            <img src="Fotos opção 03/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
+        </div>
+
+        <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
+            <div>
+                <img src="Logo.png" alt="Ielenpets" class="h-28 object-contain mb-8">
+                <h2 class="font-heading text-4xl md:text-5xl font-black leading-[0.9] mb-6">
+                    Cuidado, nutrição e confiança.
+                </h2>
+                <p class="text-white/60 text-sm font-medium max-w-md leading-relaxed">
+                    Soluções selecionadas para quem quer oferecer mais qualidade de vida aos pets.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-10">
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">Atendimento</h4>
+                    <p class="text-sm text-white/60 mb-2 font-medium">WhatsApp: (11) 99999-9999</p>
+                    <p class="text-sm text-white/60 font-medium">Seg-Sex: 09:00 - 18:00</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">E-mail</h4>
+                    <p class="text-sm text-white/60 mb-2 font-medium">contato@ielenpets.com.br</p>
+                    <p class="text-sm text-white/60 font-medium">parcerias@ielenpets.com.br</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">Navegação</h4>
+                    <div class="flex flex-col gap-2 text-sm text-white/60 font-medium">
+                        <a href="index.html" class="hover:text-white transition-colors">Início</a>
+                        <a href="catalogo.html" class="hover:text-white transition-colors">Catálogo</a>
+                        <a href="contato.html" class="hover:text-white transition-colors">Contato</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">Social</h4>
+                    <div class="flex gap-5 text-xl text-white/60">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
