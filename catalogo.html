@@ -85,13 +85,16 @@
 
     <main>
         <section class="container max-w-[1440px] mx-auto px-6 pt-12 pb-16 relative">
-            <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-                <div class="relative z-10">
-                    <div class="border-[3px] border-kenneli-dark rounded-3xl p-6 mb-8 inline-block relative">
+            <div class="grid lg:grid-cols-2 gap-x-12 gap-y-0 items-center">
+                <!-- Badge superior em linha separada para não afetar o alinhamento vertical título-descrição -->
+                <div class="lg:col-span-2 mb-8">
+                    <div class="border-[3px] border-kenneli-dark rounded-3xl p-6 inline-block relative">
                         <i class="fa-solid fa-bag-shopping absolute -top-4 -left-4 text-3xl text-kenneli-dark bg-kenneli-bg px-2"></i>
                         <h3 class="font-heading text-xl font-bold text-kenneli-dark">Catálogo Ielenpets</h3>
                     </div>
+                </div>
 
+                <div class="relative z-10">
                     <h1 class="font-heading text-6xl md:text-7xl lg:text-[4.8rem] xl:text-[5.2rem] font-black text-kenneli-dark leading-[0.9] tracking-tight">
                         <span class="block md:whitespace-nowrap">Produtos para</span>
                         <span class="block md:whitespace-nowrap">Cada Tipo de Pet</span>
@@ -211,24 +214,25 @@
                     </div>
 
                     <div id="productGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
-                        <article class="product-card bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10" data-line="caes" data-type="racao" data-stage="adulto medio grande" data-brand="ielenpets" data-name="Ração Ielen Organic Adultos" data-featured="1">
-                            <div class="h-56 bg-kenneli-light p-8 flex items-center justify-center relative">
-                                <span class="absolute top-5 left-5 bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Premium</span>
-                                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Ração para cães" class="h-full object-contain">
+                        <a href="produto.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="caes" data-type="racao" data-stage="adulto medio grande" data-brand="ielenpets" data-name="Ração Ielen Organic Adultos" data-featured="1">
+                            <div class="h-56 bg-kenneli-light p-8 flex items-center justify-center relative overflow-hidden">
+                                <span class="absolute top-5 left-5 bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest z-20">Premium</span>
+                                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Ração para cães" class="h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
                             </div>
                             <div class="p-7">
                                 <div class="flex items-center justify-between mb-4">
                                     <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Cães · Ração</span>
                                     <i class="fa-solid fa-dog text-kenneli-accent text-xl"></i>
                                 </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3">Ração Ielen Organic Adultos</h3>
+                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Ração Ielen Organic Adultos</h3>
                                 <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Nutrição completa para cães adultos de porte médio e grande.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Adulto</span>
                                     <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Ielenpets</span>
                                 </div>
                             </div>
-                        </article>
+                        </a>
 
                         <article class="product-card bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10" data-line="gatos" data-type="petisco" data-stage="todas" data-brand="meowmix" data-name="Petisco MeowMix Salmão" data-featured="2">
                             <div class="h-56 bg-kenneli-light p-8 flex items-center justify-center relative">
