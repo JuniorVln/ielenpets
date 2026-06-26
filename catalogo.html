@@ -128,44 +128,10 @@
                             </div>
                         </label>
 
-                        <div class="mb-6">
-                            <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-3">Linha</span>
-                            <div class="flex flex-wrap gap-2" data-filter-group="line">
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="all" data-active="true">Todas</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="caes">Cães</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="gatos">Gatos</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="aves">Aves</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="peixes">Peixes</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="repteis">Répteis</button>
-                                <button class="filter-button border-2 border-kenneli-dark/20 rounded-full px-4 py-2 text-xs font-black uppercase tracking-wider" data-value="roedores">Roedores</button>
-                            </div>
-                        </div>
-
                         <label class="block mb-5">
-                            <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Tipo</span>
-                            <select id="typeFilter" class="w-full rounded-2xl border-2 border-kenneli-dark/15 bg-white px-4 py-3 text-sm font-bold outline-none focus:border-kenneli-accent">
-                                <option value="all">Todos os tipos</option>
-                                <option value="racao">Ração</option>
-                                <option value="petisco">Petiscos</option>
-                                <option value="higiene">Higiene</option>
-                                <option value="saude">Saúde</option>
-                                <option value="brinquedo">Brinquedos</option>
-                                <option value="acessorio">Acessórios</option>
-                                <option value="habitat">Habitats</option>
-                            </select>
-                        </label>
-
-                        <label class="block mb-5">
-                            <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Fase / Porte</span>
-                            <select id="stageFilter" class="w-full rounded-2xl border-2 border-kenneli-dark/15 bg-white px-4 py-3 text-sm font-bold outline-none focus:border-kenneli-accent">
-                                <option value="all">Todos</option>
-                                <option value="filhote">Filhote</option>
-                                <option value="adulto">Adulto</option>
-                                <option value="senior">Sênior</option>
-                                <option value="pequeno">Porte pequeno</option>
-                                <option value="medio">Porte médio</option>
-                                <option value="grande">Porte grande</option>
-                                <option value="todas">Todas as idades</option>
+                            <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Seção</span>
+                            <select id="sectionFilter" class="w-full rounded-2xl border-2 border-kenneli-dark/15 bg-white px-4 py-3 text-sm font-bold outline-none focus:border-kenneli-accent">
+                                <option value="all">Todas as seções</option>
                             </select>
                         </label>
 
@@ -173,22 +139,15 @@
                             <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Marca</span>
                             <select id="brandFilter" class="w-full rounded-2xl border-2 border-kenneli-dark/15 bg-white px-4 py-3 text-sm font-bold outline-none focus:border-kenneli-accent">
                                 <option value="all">Todas as marcas</option>
-                                <option value="ielenpets">Ielenpets</option>
-                                <option value="ecopet">EcoPet</option>
-                                <option value="meowmix">MeowMix</option>
-                                <option value="aquavita">AquaVita</option>
-                                <option value="birdmax">BirdMax</option>
-                                <option value="reptilcare">ReptilCare</option>
-                                <option value="smallpet">SmallPet</option>
                             </select>
                         </label>
 
                         <label class="block">
                             <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Ordenar</span>
                             <select id="sortFilter" class="w-full rounded-2xl border-2 border-kenneli-dark/15 bg-white px-4 py-3 text-sm font-bold outline-none focus:border-kenneli-accent">
-                                <option value="featured">Destaques</option>
                                 <option value="name">Nome A-Z</option>
-                                <option value="line">Linha</option>
+                                <option value="brand">Marca</option>
+                                <option value="code">Código</option>
                             </select>
                         </label>
                     </div>
@@ -213,181 +172,14 @@
                         <p class="text-kenneli-dark/70 font-medium">Ajuste os filtros ou limpe a busca para ver mais opções.</p>
                     </div>
 
-                    <div id="productGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
-                        <a href="produto.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="caes" data-type="racao" data-stage="adulto medio grande" data-brand="ielenpets" data-name="Ração Ielen Organic Adultos" data-featured="1">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <span class="absolute top-5 left-5 bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest z-20">Premium</span>
-                                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Ração para cães" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Cães · Ração</span>
-                                    <i class="fa-solid fa-dog text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Ração Ielen Organic Adultos</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Nutrição completa para cães adultos de porte médio e grande.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Adulto</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Ielenpets</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div id="productGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8"></div>
 
-                        <a href="produto-petisco-salmao.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="gatos" data-type="petisco" data-stage="todas" data-brand="meowmix" data-name="Petisco MeowMix Salmão" data-featured="2">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="real_cat_snacks_salmon_flavor_1778092582816.png" loading="lazy" alt="Petisco para gatos" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Gatos · Petiscos</span>
-                                    <i class="fa-solid fa-cat text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Petisco MeowMix Salmão</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Snack crocante para recompensa e enriquecimento alimentar.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">MeowMix</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-shampoo-ecopet.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="caes" data-type="higiene" data-stage="filhote adulto senior todas" data-brand="ecopet" data-name="Shampoo EcoPet Pele Sensível" data-featured="3">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <span class="absolute top-5 left-5 bg-kenneli-accent text-kenneli-dark text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest z-20">Suave</span>
-                                <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Banho em cachorro" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Cães · Higiene</span>
-                                    <i class="fa-solid fa-bath text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Shampoo EcoPet Pele Sensível</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Fórmula suave para limpeza frequente e peles delicadas.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">EcoPet</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-birdmax-calopsitas.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="aves" data-type="racao" data-stage="todas" data-brand="birdmax" data-name="Mistura BirdMax Calopsitas" data-featured="4">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Ave" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Aves · Ração</span>
-                                    <i class="fa-solid fa-dove text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Mistura BirdMax Calopsitas</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Blend de sementes e grãos para aves ornamentais.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">BirdMax</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-aquavita-flocos.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="peixes" data-type="racao" data-stage="todas" data-brand="aquavita" data-name="AquaVita Flocos Tropicais" data-featured="5">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Peixe ornamental" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Peixes · Ração</span>
-                                    <i class="fa-solid fa-fish text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">AquaVita Flocos Tropicais</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Alimento em flocos para peixes tropicais de aquário.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">AquaVita</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-habitat-reptilcare.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="repteis" data-type="habitat" data-stage="todas" data-brand="reptilcare" data-name="Kit Habitat ReptilCare" data-featured="6">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <span class="absolute top-5 left-5 bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest z-20">Habitat</span>
-                                <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Réptil" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Répteis · Habitat</span>
-                                    <i class="fa-solid fa-dragon text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Kit Habitat ReptilCare</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Estrutura base para terrários com decoração e abrigo.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">ReptilCare</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-substrato-smallpet.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="roedores" data-type="habitat" data-stage="todas" data-brand="smallpet" data-name="Substrato SmallPet Natural" data-featured="7">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Roedor" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Roedores · Habitat</span>
-                                    <i class="fa-solid fa-otter text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Substrato SmallPet Natural</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Substrato absorvente para gaiolas e pequenos habitats.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">SmallPet</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-areia-ielen.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="gatos" data-type="higiene" data-stage="filhote adulto senior todas" data-brand="ielenpets" data-name="Areia Higiênica Ielen Control" data-featured="8">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Gato" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Gatos · Higiene</span>
-                                    <i class="fa-solid fa-cat text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Areia Higiênica Ielen Control</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Controle de odores e alta absorção para rotina diária.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Todas</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Ielenpets</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="produto-brinquedo-corda.html" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block" data-line="caes" data-type="brinquedo" data-stage="filhote adulto pequeno medio grande" data-brand="ecopet" data-name="Brinquedo Corda Resistente" data-featured="9">
-                            <div class="h-56 bg-kenneli-light p-2 flex items-center justify-center relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=80" loading="lazy" alt="Brinquedo para cachorro" class="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-kenneli-dark/0 group-hover:bg-kenneli-dark/5 transition-colors z-10"></div>
-                            </div>
-                            <div class="p-7">
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">Cães · Brinquedos</span>
-                                    <i class="fa-solid fa-baseball text-kenneli-accent text-xl"></i>
-                                </div>
-                                <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3 group-hover:text-kenneli-accent transition-colors">Brinquedo Corda Resistente</h3>
-                                <p class="text-sm text-kenneli-dark/70 font-medium leading-relaxed mb-5">Corda de algodão para mordida, tração e enriquecimento.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">Adulto</span>
-                                    <span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">EcoPet</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="mt-12 flex justify-center">
+                        <button id="loadMore" class="hidden bg-kenneli-dark text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-accent hover:text-kenneli-dark transition-all">
+                            Carregar mais produtos
+                        </button>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -448,122 +240,92 @@
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script>
-        const state = {
-            line: 'all',
-            type: 'all',
-            stage: 'all',
-            brand: 'all',
-            search: '',
-            sort: 'featured'
-        };
+        const PRODUCTS = (window.IELEN_PRODUCTS || []).slice();
+        const PAGE_SIZE = 60;
+        const state = { section: 'all', brand: 'all', search: '', sort: 'name', shown: PAGE_SIZE };
 
-        const cards = Array.from(document.querySelectorAll('.product-card'));
         const grid = document.getElementById('productGrid');
         const resultCount = document.getElementById('resultCount');
         const emptyState = document.getElementById('emptyState');
+        const loadMore = document.getElementById('loadMore');
         const searchInput = document.getElementById('searchInput');
+        const sectionFilter = document.getElementById('sectionFilter');
+        const brandFilter = document.getElementById('brandFilter');
+        const sortFilter = document.getElementById('sortFilter');
 
-        function normalize(value) {
-            return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+        function fillSelect(sel, values) {
+            values.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+            for (const v of values) {
+                const o = document.createElement('option');
+                o.value = v; o.textContent = v;
+                sel.appendChild(o);
+            }
+        }
+        fillSelect(sectionFilter, [...new Set(PRODUCTS.map(p => p.section).filter(Boolean))]);
+        fillSelect(brandFilter, [...new Set(PRODUCTS.map(p => p.brand).filter(Boolean))]);
+
+        function matches(p) {
+            if (state.section !== 'all' && p.section !== state.section) return false;
+            if (state.brand !== 'all' && p.brand !== state.brand) return false;
+            if (state.search) {
+                const hay = norm(`${p.name} ${p.brand} ${p.section} ${p.variants.map(v => v.code + ' ' + v.size).join(' ')}`);
+                if (!hay.includes(norm(state.search))) return false;
+            }
+            return true;
         }
 
-        function updateLineButtons() {
-            document.querySelectorAll('[data-filter-group="line"] .filter-button').forEach((button) => {
-                button.dataset.active = String(button.dataset.value === state.line);
-            });
+        function sortList(list) {
+            const by = state.sort;
+            return list.sort((a, b) =>
+                by === 'brand' ? (a.brand.localeCompare(b.brand, 'pt-BR') || a.name.localeCompare(b.name, 'pt-BR'))
+                : by === 'code' ? a.code.localeCompare(b.code)
+                : a.name.localeCompare(b.name, 'pt-BR'));
         }
 
-        function cardMatches(card) {
-            const text = normalize(`${card.dataset.name} ${card.dataset.line} ${card.dataset.type} ${card.dataset.stage} ${card.dataset.brand}`);
-            const lineMatch = state.line === 'all' || card.dataset.line === state.line;
-            const typeMatch = state.type === 'all' || card.dataset.type === state.type;
-            const stageMatch = state.stage === 'all' || card.dataset.stage.split(' ').includes(state.stage);
-            const brandMatch = state.brand === 'all' || card.dataset.brand === state.brand;
-            const searchMatch = !state.search || text.includes(normalize(state.search));
-
-            return lineMatch && typeMatch && stageMatch && brandMatch && searchMatch;
+        function card(p) {
+            const vtags = p.variants.slice(0, 4).map(v =>
+                `<span class="bg-kenneli-bg text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">${v.size}</span>`).join('');
+            return `<a href="produto.html?id=${p.id}" class="product-card group bg-white rounded-[34px] overflow-hidden shadow-xl shadow-kenneli-dark/5 border border-kenneli-dark/10 transition-all hover:scale-[1.02] block">
+                <div class="h-56 bg-white p-3 flex items-center justify-center relative overflow-hidden border-b border-kenneli-dark/5">
+                    <img src="${p.image}" loading="lazy" alt="${p.name}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-7">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] uppercase tracking-widest font-black text-kenneli-dark/50">${p.section || p.brand}</span>
+                        <span class="text-[10px] font-black text-kenneli-dark/30">#${p.code}</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-black text-kenneli-dark mb-4 group-hover:text-kenneli-accent transition-colors leading-tight">${p.name}</h3>
+                    <div class="flex flex-wrap gap-2">${vtags}<span class="bg-kenneli-dark/5 text-kenneli-dark px-3 py-1 rounded-full text-[10px] font-black uppercase">${p.brand}</span></div>
+                </div>
+            </a>`;
         }
 
-        function sortCards(visibleCards) {
-            const sorted = [...visibleCards];
-            sorted.sort((a, b) => {
-                if (state.sort === 'name') {
-                    return a.dataset.name.localeCompare(b.dataset.name, 'pt-BR');
-                }
-
-                if (state.sort === 'line') {
-                    return a.dataset.line.localeCompare(b.dataset.line, 'pt-BR') || a.dataset.name.localeCompare(b.dataset.name, 'pt-BR');
-                }
-
-                return Number(a.dataset.featured) - Number(b.dataset.featured);
-            });
-
-            sorted.forEach((card) => grid.appendChild(card));
+        let filtered = [];
+        function render() {
+            filtered = sortList(PRODUCTS.filter(matches));
+            resultCount.textContent = filtered.length;
+            emptyState.classList.toggle('hidden', filtered.length > 0);
+            grid.innerHTML = filtered.slice(0, state.shown).map(card).join('');
+            loadMore.classList.toggle('hidden', state.shown >= filtered.length);
         }
+        function reset() { state.shown = PAGE_SIZE; render(); }
 
-        function applyFilters() {
-            const visibleCards = cards.filter(cardMatches);
-            cards.forEach((card) => {
-                card.hidden = !visibleCards.includes(card);
-            });
-            sortCards(visibleCards);
-            resultCount.textContent = visibleCards.length;
-            emptyState.classList.toggle('hidden', visibleCards.length > 0);
-        }
-
-        document.querySelectorAll('[data-filter-group="line"] .filter-button').forEach((button) => {
-            button.addEventListener('click', () => {
-                state.line = button.dataset.value;
-                updateLineButtons();
-                applyFilters();
-            });
-        });
-
-        searchInput.addEventListener('input', (event) => {
-            state.search = event.target.value;
-            applyFilters();
-        });
-
-        document.getElementById('typeFilter').addEventListener('change', (event) => {
-            state.type = event.target.value;
-            applyFilters();
-        });
-
-        document.getElementById('stageFilter').addEventListener('change', (event) => {
-            state.stage = event.target.value;
-            applyFilters();
-        });
-
-        document.getElementById('brandFilter').addEventListener('change', (event) => {
-            state.brand = event.target.value;
-            applyFilters();
-        });
-
-        document.getElementById('sortFilter').addEventListener('change', (event) => {
-            state.sort = event.target.value;
-            applyFilters();
-        });
-
+        searchInput.addEventListener('input', (e) => { state.search = e.target.value; reset(); });
+        sectionFilter.addEventListener('change', (e) => { state.section = e.target.value; reset(); });
+        brandFilter.addEventListener('change', (e) => { state.brand = e.target.value; reset(); });
+        sortFilter.addEventListener('change', (e) => { state.sort = e.target.value; reset(); });
+        loadMore.addEventListener('click', () => { state.shown += PAGE_SIZE; render(); });
         document.getElementById('clearFilters').addEventListener('click', () => {
-            state.line = 'all';
-            state.type = 'all';
-            state.stage = 'all';
-            state.brand = 'all';
-            state.search = '';
-            state.sort = 'featured';
-
-            searchInput.value = '';
-            document.getElementById('typeFilter').value = 'all';
-            document.getElementById('stageFilter').value = 'all';
-            document.getElementById('brandFilter').value = 'all';
-            document.getElementById('sortFilter').value = 'featured';
-            updateLineButtons();
-            applyFilters();
+            state.section = 'all'; state.brand = 'all'; state.search = ''; state.sort = 'name'; state.shown = PAGE_SIZE;
+            searchInput.value = ''; sectionFilter.value = 'all'; brandFilter.value = 'all'; sortFilter.value = 'name';
+            render();
         });
 
-        updateLineButtons();
-        applyFilters();
+        render();
     </script>
 </body>
 </html>
