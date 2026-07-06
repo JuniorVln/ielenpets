@@ -244,7 +244,25 @@
     <script>
         const PRODUCTS = (window.IELEN_PRODUCTS || []).slice();
         const PAGE_SIZE = 60;
-        const state = { section: 'all', brand: 'all', search: '', sort: 'name', shown: PAGE_SIZE };
+
+        const CATEGORY_MAP = {
+            caes: { sections: ['Cães'] },
+            aves: { sections: ['Pássaros', 'Gaiolas'] },
+            gatos: { sections: ['Gatos'] },
+            peixes: { sections: ['Peixes'], excludeName: /répt|reptil/i },
+            repteis: { nameMatch: /répt|reptil/i },
+            roedores: { sections: ['Roedores'] },
+        };
+
+        const categorySlug = new URLSearchParams(location.search).get('category');
+        const state = {
+            category: categorySlug && CATEGORY_MAP[categorySlug] ? categorySlug : null,
+            section: 'all',
+            brand: 'all',
+            search: '',
+            sort: 'name',
+            shown: PAGE_SIZE,
+        };
 
         const grid = document.getElementById('productGrid');
         const resultCount = document.getElementById('resultCount');
@@ -268,7 +286,17 @@
         fillSelect(sectionFilter, [...new Set(PRODUCTS.map(p => p.section).filter(Boolean))]);
         fillSelect(brandFilter, [...new Set(PRODUCTS.map(p => p.brand).filter(Boolean))]);
 
+        function matchesCategory(p) {
+            if (!state.category) return true;
+            const cfg = CATEGORY_MAP[state.category];
+            if (cfg.nameMatch) return cfg.nameMatch.test(p.name);
+            if (!cfg.sections.includes(p.section)) return false;
+            if (cfg.excludeName && cfg.excludeName.test(p.name)) return false;
+            return true;
+        }
+
         function matches(p) {
+            if (!matchesCategory(p)) return false;
             if (state.section !== 'all' && p.section !== state.section) return false;
             if (state.brand !== 'all' && p.brand !== state.brand) return false;
             if (state.search) {
@@ -320,8 +348,10 @@
         sortFilter.addEventListener('change', (e) => { state.sort = e.target.value; reset(); });
         loadMore.addEventListener('click', () => { state.shown += PAGE_SIZE; render(); });
         document.getElementById('clearFilters').addEventListener('click', () => {
+            state.category = null;
             state.section = 'all'; state.brand = 'all'; state.search = ''; state.sort = 'name'; state.shown = PAGE_SIZE;
             searchInput.value = ''; sectionFilter.value = 'all'; brandFilter.value = 'all'; sortFilter.value = 'name';
+            history.replaceState(null, '', 'catalogo.html');
             render();
         });
 
