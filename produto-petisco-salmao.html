@@ -51,7 +51,7 @@
 
     <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
         <a href="index.html" class="flex items-center">
-            <img src="Logo.png" alt="Ielenpet Logo" class="h-24 object-contain">
+            <img src="Logo.png" alt="Ielenpet Logo" class="h-16 md:h-24 object-contain">
         </a>
         <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
             <a href="index.html" class="hover:text-kenneli-accent transition-colors">Início</a>
@@ -60,10 +60,36 @@
             <a href="catalogo.html" class="hover:text-kenneli-accent transition-colors">Catálogo</a>
             <a href="index.html#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
         </nav>
-        <a href="contato.html" class="bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">
-            Contato
-        </a>
-    </header>
+        <a href="contato.html" class="hidden md:inline-block bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+            <button id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-xl hover:bg-kenneli-dark hover:text-white transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Menu mobile -->
+        <div id="mobileMenu" class="fixed inset-0 z-[100] hidden md:hidden" aria-hidden="true">
+            <div class="absolute inset-0 bg-kenneli-darker/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" data-menu-close></div>
+            <nav id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-kenneli-bg shadow-2xl flex flex-col p-8 translate-x-full transition-transform duration-300 ease-out">
+                <div class="flex items-center justify-between mb-10">
+                    <img src="Logo.png" alt="Ielenpet" class="h-14 object-contain">
+                    <button type="button" aria-label="Fechar menu" data-menu-close class="w-11 h-11 inline-flex items-center justify-center rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-lg hover:bg-kenneli-dark hover:text-white transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
+                    <a href="index.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Início</a>
+                    <a href="index.html#solucoes" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Soluções</a>
+                    <a href="index.html#sobre" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Sobre</a>
+                    <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Catálogo</a>
+                    <a href="index.html#valores" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Valores</a>
+                </div>
+                <a href="contato.html" class="mt-8 bg-kenneli-accent text-kenneli-dark text-center px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+                <div class="mt-auto pt-10 flex items-center gap-6 text-2xl text-kenneli-dark/60">
+                    <a href="https://wa.me/5541995950968" aria-label="WhatsApp" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/ielenpet" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </nav>
+        </div>
 
     <main class="relative z-10">
         <nav class="container max-w-[1440px] mx-auto px-6 py-6">
@@ -276,5 +302,6 @@
             element.classList.add('active');
         }
     </script>
+    <script src="menu.js"></script>
 </body>
 </html>

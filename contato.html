@@ -65,7 +65,7 @@
 
     <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
         <a href="index.html" class="flex items-center">
-            <img src="Logo.png" alt="Ielenpet Logo" class="h-24 object-contain">
+            <img src="Logo.png" alt="Ielenpet Logo" class="h-16 md:h-24 object-contain">
         </a>
 
         <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
@@ -76,10 +76,36 @@
             <a href="index.html#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
         </nav>
 
-        <a href="contato.html" class="bg-kenneli-dark text-white px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-accent hover:text-kenneli-dark transition-all">
-            Contato
-        </a>
-    </header>
+        <a href="contato.html" class="hidden md:inline-block bg-kenneli-dark text-white px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-accent hover:text-kenneli-dark transition-all">Contato</a>
+            <button id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-xl hover:bg-kenneli-dark hover:text-white transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Menu mobile -->
+        <div id="mobileMenu" class="fixed inset-0 z-[100] hidden md:hidden" aria-hidden="true">
+            <div class="absolute inset-0 bg-kenneli-darker/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" data-menu-close></div>
+            <nav id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-kenneli-bg shadow-2xl flex flex-col p-8 translate-x-full transition-transform duration-300 ease-out">
+                <div class="flex items-center justify-between mb-10">
+                    <img src="Logo.png" alt="Ielenpet" class="h-14 object-contain">
+                    <button type="button" aria-label="Fechar menu" data-menu-close class="w-11 h-11 inline-flex items-center justify-center rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-lg hover:bg-kenneli-dark hover:text-white transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
+                    <a href="index.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Início</a>
+                    <a href="index.html#solucoes" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Soluções</a>
+                    <a href="index.html#sobre" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Sobre</a>
+                    <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Catálogo</a>
+                    <a href="index.html#valores" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Valores</a>
+                </div>
+                <a href="contato.html" class="mt-8 bg-kenneli-accent text-kenneli-dark text-center px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+                <div class="mt-auto pt-10 flex items-center gap-6 text-2xl text-kenneli-dark/60">
+                    <a href="https://wa.me/5541995950968" aria-label="WhatsApp" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/ielenpet" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </nav>
+        </div>
 
     <main>
         <section class="container max-w-[1440px] mx-auto px-6 pt-12 pb-24 relative">
@@ -90,7 +116,7 @@
                         <h3 class="font-heading text-xl font-bold text-kenneli-dark">Atendimento Ielenpet</h3>
                     </div>
 
-                    <h1 class="font-heading text-6xl md:text-7xl lg:text-[5.5rem] font-black text-kenneli-dark leading-[0.9] tracking-tight mb-8">
+                    <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-kenneli-dark leading-[0.9] tracking-tight mb-8">
                         Fale com <br> a Nossa <br> Equipe
                     </h1>
 
@@ -108,16 +134,16 @@
                     </div>
                 </div>
 
-                <div class="relative min-h-[520px]">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=80" alt="Cães Ielenpet" class="absolute bottom-0 right-0 w-[85%] h-[430px] object-cover rounded-[48px] shadow-2xl border-8 border-kenneli-bg">
-                    <div class="absolute -top-4 -left-12 bg-kenneli-dark text-white p-8 rounded-[36px] shadow-xl max-w-xs z-20">
+                <div class="relative min-h-[420px] sm:min-h-[520px] mt-4 lg:mt-0">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=80" alt="Cães Ielenpet" class="absolute bottom-0 right-0 w-[80%] sm:w-[85%] h-[340px] sm:h-[430px] object-cover rounded-[36px] sm:rounded-[48px] shadow-2xl border-8 border-kenneli-bg">
+                    <div class="absolute top-0 left-0 sm:-top-4 sm:-left-12 bg-kenneli-dark text-white p-6 sm:p-8 rounded-[28px] sm:rounded-[36px] shadow-xl max-w-[15rem] sm:max-w-xs z-20">
                         <i class="fa-solid fa-headset text-4xl text-kenneli-accent mb-5"></i>
                         <h2 class="font-heading text-3xl font-black mb-3">Resposta rápida</h2>
                         <p class="text-white/70 text-sm leading-relaxed font-medium">
                             Nossa equipe direciona seu contato para o atendimento correto em horário comercial.
                         </p>
                     </div>
-                    <div class="absolute bottom-2 -left-8 bg-kenneli-accent text-kenneli-dark px-7 py-5 rounded-full shadow-xl font-black uppercase tracking-widest text-xs z-20">
+                    <div class="absolute bottom-2 left-0 sm:-left-8 bg-kenneli-accent text-kenneli-dark px-6 sm:px-7 py-4 sm:py-5 rounded-full shadow-xl font-black uppercase tracking-widest text-[11px] sm:text-xs z-20">
                         Seg-Sex · 09h às 18h
                     </div>
                 </div>
@@ -313,5 +339,6 @@
         </div>
     </footer>
 
+    <script src="menu.js"></script>
 </body>
 </html>

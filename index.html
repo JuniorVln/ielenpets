@@ -98,7 +98,7 @@
     <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
         <div class="flex items-center">
             <!-- Logo original -->
-            <img src="Logo.png" alt="Ielenpet Logo" class="h-24 object-contain">
+            <img src="Logo.png" alt="Ielenpet Logo" class="h-16 md:h-24 object-contain">
         </div>
         
         <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
@@ -109,13 +109,39 @@
             <a href="#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
         </nav>
         
-        <a href="contato.html" class="bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">
-            Contato
-        </a>
-    </header>
+        <a href="contato.html" class="hidden md:inline-block bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+            <button id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-xl hover:bg-kenneli-dark hover:text-white transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Menu mobile -->
+        <div id="mobileMenu" class="fixed inset-0 z-[100] hidden md:hidden" aria-hidden="true">
+            <div class="absolute inset-0 bg-kenneli-darker/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" data-menu-close></div>
+            <nav id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-kenneli-bg shadow-2xl flex flex-col p-8 translate-x-full transition-transform duration-300 ease-out">
+                <div class="flex items-center justify-between mb-10">
+                    <img src="Logo.png" alt="Ielenpet" class="h-14 object-contain">
+                    <button type="button" aria-label="Fechar menu" data-menu-close class="w-11 h-11 inline-flex items-center justify-center rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-lg hover:bg-kenneli-dark hover:text-white transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
+                    <a href="index.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Início</a>
+                    <a href="index.html#solucoes" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Soluções</a>
+                    <a href="index.html#sobre" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Sobre</a>
+                    <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Catálogo</a>
+                    <a href="index.html#valores" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Valores</a>
+                </div>
+                <a href="contato.html" class="mt-8 bg-kenneli-accent text-kenneli-dark text-center px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+                <div class="mt-auto pt-10 flex items-center gap-6 text-2xl text-kenneli-dark/60">
+                    <a href="https://wa.me/5541995950968" aria-label="WhatsApp" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/ielenpet" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </nav>
+        </div>
 
     <!-- 2. Hero Section -->
-    <section class="container max-w-[1440px] mx-auto px-6 pt-10 pb-44 relative">
+    <section class="container max-w-[1440px] mx-auto px-6 pt-6 md:pt-10 pb-16 md:pb-44 relative">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <!-- Texto Esquerda -->
             <div class="md:w-1/2 relative z-10">
@@ -125,7 +151,7 @@
                     <h3 class="font-heading text-xl font-bold text-kenneli-dark">Bem-vindo à Ielenpet</h3>
                 </div>
                 
-                <h1 class="font-heading text-6xl md:text-7xl lg:text-[5.5rem] font-black text-kenneli-dark leading-[0.9] tracking-tight mb-8">
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-kenneli-dark leading-[0.9] tracking-tight mb-8">
                     Encontre <br> o Melhor <br> para seu Pet
                 </h1>
                 
@@ -144,9 +170,9 @@
             </div>
             
             <!-- Imagem Direita -->
-            <div class="md:w-1/2 relative flex justify-center mt-12 md:mt-20 md:-translate-x-12 lg:-translate-x-20 z-20">
+            <div class="md:w-1/2 relative flex flex-col items-center md:justify-center mt-12 md:mt-20 md:-translate-x-12 lg:-translate-x-20 z-20">
                 <!-- Imagem do pet com destaque (Estilo cutout do Kenneli) -->
-                <img src="ChatGPT Image 6 de mai. de 2026, 14_37_30.png" alt="Cão Destaque" class="w-full max-w-[820px] relative z-10 scale-150 translate-y-8 origin-bottom" style="filter: drop-shadow(0 20px 30px rgba(36, 113, 109, 0.16)); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);">
+                <img src="ChatGPT Image 6 de mai. de 2026, 14_37_30.png" alt="Cão Destaque" class="w-full max-w-[820px] relative z-10 scale-105 sm:scale-125 md:scale-150 translate-y-2 md:translate-y-8 origin-bottom" style="filter: drop-shadow(0 20px 30px rgba(36, 113, 109, 0.16)); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);">
                 
                 <!-- Cards flutuantes de categorias -->
                 <div class="mt-10 grid grid-cols-[repeat(2,7.5rem)] sm:grid-cols-[repeat(3,7.75rem)] lg:grid-cols-[repeat(6,7.25rem)] justify-center gap-4 z-30 md:absolute md:-bottom-12 md:left-1/2 md:-translate-x-1/2 md:mt-0">
@@ -638,5 +664,6 @@
         </div>
     </footer>
 
+    <script src="menu.js"></script>
 </body>
 </html>
