@@ -67,15 +67,14 @@
 
     <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
         <a href="index.html" class="flex items-center">
-            <img src="Logo.png" alt="Ielenpet Logo" class="h-16 md:h-24 object-contain">
+            <img src="LOGO IELENPET 2001.png" alt="Ielenpet Logo" class="h-20 md:h-28 object-contain">
         </a>
 
-        <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
+                <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
             <a href="index.html" class="hover:text-kenneli-accent transition-colors">Início</a>
-            <a href="index.html#solucoes" class="hover:text-kenneli-accent transition-colors">Soluções</a>
-            <a href="index.html#sobre" class="hover:text-kenneli-accent transition-colors">Sobre</a>
-            <a href="catalogo.html" class="text-kenneli-accent transition-colors">Catálogo</a>
-            <a href="index.html#valores" class="hover:text-kenneli-accent transition-colors">Valores</a>
+            <a href="quem-somos.html" class="hover:text-kenneli-accent transition-colors">Quem Somos</a>
+            <a href="catalogo.html" class="text-kenneli-accent transition-colors">Produtos</a>
+            <a href="ofertas.html" class="hover:text-kenneli-accent transition-colors">Ofertas do Mês</a>
         </nav>
 
         <a href="contato.html" class="hidden md:inline-block bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
@@ -89,17 +88,16 @@
             <div class="absolute inset-0 bg-kenneli-darker/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" data-menu-close></div>
             <nav id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-kenneli-bg shadow-2xl flex flex-col p-8 translate-x-full transition-transform duration-300 ease-out">
                 <div class="flex items-center justify-between mb-10">
-                    <img src="Logo.png" alt="Ielenpet" class="h-14 object-contain">
+                    <img src="LOGO IELENPET 2001.png" alt="Ielenpet" class="h-16 object-contain">
                     <button type="button" aria-label="Fechar menu" data-menu-close class="w-11 h-11 inline-flex items-center justify-center rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-lg hover:bg-kenneli-dark hover:text-white transition-colors">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
+                                <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
                     <a href="index.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Início</a>
-                    <a href="index.html#solucoes" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Soluções</a>
-                    <a href="index.html#sobre" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Sobre</a>
-                    <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Catálogo</a>
-                    <a href="index.html#valores" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Valores</a>
+                    <a href="quem-somos.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Quem Somos</a>
+                    <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Produtos</a>
+                    <a href="ofertas.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Ofertas do Mês</a>
                 </div>
                 <a href="contato.html" class="mt-8 bg-kenneli-accent text-kenneli-dark text-center px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
                 <div class="mt-auto pt-10 flex items-center gap-6 text-2xl text-kenneli-dark/60">
@@ -121,15 +119,15 @@
                 </div>
 
                 <div class="relative z-10">
-                    <h1 class="font-heading text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[4.8rem] xl:text-[5.2rem] font-black text-kenneli-dark leading-[0.9] tracking-tight">
-                        <span class="block md:whitespace-nowrap">Produtos para</span>
-                        <span class="block md:whitespace-nowrap">Cada Tipo de Pet</span>
+                    <h1 id="catalogTitle" class="font-heading text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[4.8rem] xl:text-[5.2rem] font-black text-kenneli-dark leading-[0.9] tracking-tight">
+                        <span class="block md:whitespace-nowrap">Nossos</span>
+                        <span class="block md:whitespace-nowrap">Produtos</span>
                     </h1>
                 </div>
 
                 <div class="relative z-10 flex items-center lg:justify-center">
-                    <p class="text-kenneli-dark/80 text-lg md:text-xl max-w-xl font-medium leading-relaxed text-left">
-                        Filtre por linha, categoria, fase, porte e marca para encontrar rapidamente os produtos certos para cães, gatos, aves, peixes, répteis e roedores.
+                    <p id="catalogSubtitle" class="text-kenneli-dark/80 text-lg md:text-xl max-w-xl font-medium leading-relaxed text-left">
+                        Filtre por seção, marca ou busca para encontrar rapidamente os produtos certos para o seu negócio.
                     </p>
                 </div>
             </div>
@@ -213,9 +211,9 @@
 
     <div class="bg-kenneli-dark text-white py-12 border-b-[6px] border-kenneli-accent mt-20">
         <div class="container max-w-[1440px] mx-auto px-6 flex flex-wrap justify-around items-center font-heading font-black text-3xl md:text-5xl gap-6">
-            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Cuidado</span>
-            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Adoção</span>
-            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Bem-Estar</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Parceria</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Variedade</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Confiança</span>
         </div>
     </div>
 
@@ -226,7 +224,7 @@
 
         <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
             <div>
-                <img src="Logo.png" alt="Ielenpet" class="h-28 object-contain mb-8">
+                <img src="LOGO IELENPET 2001.png" alt="Ielenpet" class="h-32 object-contain mb-8">
                 <h2 class="font-heading text-4xl md:text-5xl font-black leading-[0.9] mb-6">
                     Produtos selecionados para cada pet.
                 </h2>
@@ -240,7 +238,7 @@
                     <h4 class="font-heading font-bold text-2xl mb-4 text-white">Atendimento</h4>
                     <p class="text-sm text-white/60 mb-2 font-medium">Telefones: (41) 3606-9158 / (41) 3621-2194</p>
                     <p class="text-sm text-white/60 mb-2 font-medium">Televendas: <a href="https://wa.me/5541995950968" class="hover:text-white transition-colors">(41) 99595-0968</a></p>
-                    <p class="text-sm text-white/60 font-medium">Seg-Sex: 09:00 - 18:00</p>
+                    <p class="text-sm text-white/60 font-medium">Seg-Qui: 07:30 - 17:30 · Sex: 07:30 - 16:30</p>
                 </div>
                 <div>
                     <h4 class="font-heading font-bold text-2xl mb-4 text-white">Endereço</h4>
@@ -252,7 +250,9 @@
                     <h4 class="font-heading font-bold text-2xl mb-4 text-white">Navegação</h4>
                     <div class="flex flex-col gap-2 text-sm text-white/60 font-medium">
                         <a href="index.html" class="hover:text-white transition-colors">Início</a>
-                        <a href="catalogo.html" class="hover:text-white transition-colors">Catálogo</a>
+                        <a href="quem-somos.html" class="hover:text-white transition-colors">Quem Somos</a>
+                        <a href="catalogo.html" class="hover:text-white transition-colors">Produtos</a>
+                        <a href="ofertas.html" class="hover:text-white transition-colors">Ofertas do Mês</a>
                         <a href="contato.html" class="hover:text-white transition-colors">Contato</a>
                     </div>
                 </div>
@@ -273,12 +273,12 @@
         const PAGE_SIZE = 60;
 
         const CATEGORY_MAP = {
-            caes: { sections: ['Cães'] },
-            aves: { sections: ['Pássaros', 'Gaiolas'] },
-            gatos: { sections: ['Gatos'] },
-            peixes: { sections: ['Peixes'], excludeName: /répt|reptil/i },
-            repteis: { nameMatch: /répt|reptil/i },
-            roedores: { sections: ['Roedores'] },
+            caes: { label: 'Cães', sections: ['Cães'] },
+            aves: { label: 'Aves', sections: ['Pássaros', 'Gaiolas'] },
+            gatos: { label: 'Gatos', sections: ['Gatos'] },
+            peixes: { label: 'Peixes', sections: ['Peixes'], excludeName: /répt|reptil/i },
+            repteis: { label: 'Répteis', nameMatch: /répt|reptil|terrário|terrario/i },
+            roedores: { label: 'Roedores', sections: ['Roedores'] },
         };
 
         const categorySlug = new URLSearchParams(location.search).get('category');
@@ -299,8 +299,10 @@
         const sectionFilter = document.getElementById('sectionFilter');
         const brandFilter = document.getElementById('brandFilter');
         const sortFilter = document.getElementById('sortFilter');
+        const catalogTitle = document.getElementById('catalogTitle');
+        const catalogSubtitle = document.getElementById('catalogSubtitle');
 
-        const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
         function fillSelect(sel, values) {
             values.sort((a, b) => a.localeCompare(b, 'pt-BR'));
@@ -313,10 +315,34 @@
         fillSelect(sectionFilter, [...new Set(PRODUCTS.map(p => p.section).filter(Boolean))]);
         fillSelect(brandFilter, [...new Set(PRODUCTS.map(p => p.brand).filter(Boolean))]);
 
+        function updateUrl() {
+            const params = new URLSearchParams();
+            if (state.category) params.set('category', state.category);
+            const qs = params.toString();
+            history.replaceState(null, '', qs ? `catalogo.html?${qs}` : 'catalogo.html');
+        }
+
+        function updateTitle() {
+            if (state.category && CATEGORY_MAP[state.category]) {
+                const label = CATEGORY_MAP[state.category].label;
+                catalogTitle.innerHTML = `<span class="block md:whitespace-nowrap">${label}</span>`;
+                catalogSubtitle.textContent = `Produtos da linha ${label}. Use os filtros ao lado para refinar por seção, marca ou busca.`;
+                document.title = `${label} - Catálogo Ielenpet`;
+            } else if (state.section !== 'all') {
+                catalogTitle.innerHTML = `<span class="block md:whitespace-nowrap">${state.section}</span>`;
+                catalogSubtitle.textContent = `Produtos da seção ${state.section}. Use os filtros ao lado para refinar por marca ou busca.`;
+                document.title = `${state.section} - Catálogo Ielenpet`;
+            } else {
+                catalogTitle.innerHTML = `<span class="block md:whitespace-nowrap">Nossos</span><span class="block md:whitespace-nowrap">Produtos</span>`;
+                catalogSubtitle.textContent = 'Filtre por seção, marca ou busca para encontrar rapidamente os produtos certos para o seu negócio.';
+                document.title = 'Catálogo - Ielenpet';
+            }
+        }
+
         function matchesCategory(p) {
             if (!state.category) return true;
             const cfg = CATEGORY_MAP[state.category];
-            if (cfg.nameMatch) return cfg.nameMatch.test(p.name);
+            if (cfg.nameMatch) return cfg.nameMatch.test(p.name) || cfg.nameMatch.test(p.section || '');
             if (!cfg.sections.includes(p.section)) return false;
             if (cfg.excludeName && cfg.excludeName.test(p.name)) return false;
             return true;
@@ -366,12 +392,36 @@
             emptyState.classList.toggle('hidden', filtered.length > 0);
             grid.innerHTML = filtered.slice(0, state.shown).map(card).join('');
             loadMore.classList.toggle('hidden', state.shown >= filtered.length);
+            updateTitle();
         }
         function reset() { state.shown = PAGE_SIZE; render(); }
 
-        searchInput.addEventListener('input', (e) => { state.search = e.target.value; reset(); });
-        sectionFilter.addEventListener('change', (e) => { state.section = e.target.value; reset(); });
-        brandFilter.addEventListener('change', (e) => { state.brand = e.target.value; reset(); });
+        searchInput.addEventListener('input', (e) => {
+            state.search = e.target.value;
+            // Busca atua no catálogo inteiro
+            state.category = null;
+            state.section = 'all';
+            sectionFilter.value = 'all';
+            updateUrl();
+            reset();
+        });
+        sectionFilter.addEventListener('change', (e) => {
+            state.section = e.target.value;
+            // Seção do sidebar substitui o filtro de categoria da URL
+            // para não combinar filtros incompatíveis (ex.: Cães + Acessórios = 0)
+            state.category = null;
+            updateUrl();
+            reset();
+        });
+        brandFilter.addEventListener('change', (e) => {
+            state.brand = e.target.value;
+            // Marca sozinha deve funcionar em todo o catálogo
+            state.category = null;
+            state.section = 'all';
+            sectionFilter.value = 'all';
+            updateUrl();
+            reset();
+        });
         sortFilter.addEventListener('change', (e) => { state.sort = e.target.value; reset(); });
         loadMore.addEventListener('click', () => { state.shown += PAGE_SIZE; render(); });
         document.getElementById('clearFilters').addEventListener('click', () => {
@@ -381,6 +431,15 @@
             history.replaceState(null, '', 'catalogo.html');
             render();
         });
+
+        // Se veio de ?category=, pré-seleciona a seção correspondente quando houver 1:1
+        if (state.category && CATEGORY_MAP[state.category]?.sections?.length === 1) {
+            const sec = CATEGORY_MAP[state.category].sections[0];
+            if ([...sectionFilter.options].some(o => o.value === sec)) {
+                sectionFilter.value = sec;
+                state.section = sec;
+            }
+        }
 
         render();
     </script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin · Ofertas do Mês - Ielenpet</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kenneli: {
+                            bg: '#effaf8',
+                            dark: '#24716d',
+                            darker: '#123f3c',
+                            accent: '#7ec9c4',
+                            light: '#d7f1ef'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased bg-kenneli-bg text-kenneli-dark min-h-screen">
+    <div class="container max-w-3xl mx-auto px-6 py-12">
+        <div class="mb-10">
+            <p class="text-[11px] uppercase tracking-widest font-black text-kenneli-dark/50 mb-2">Painel interno</p>
+            <h1 class="font-heading text-4xl md:text-5xl font-black leading-tight mb-3">Atualizar Ofertas do Mês</h1>
+            <p class="text-kenneli-dark/70 font-medium leading-relaxed">
+                Preencha os campos, baixe o <code class="bg-kenneli-light px-2 py-0.5 rounded">config.json</code>
+                e substitua o arquivo em <code class="bg-kenneli-light px-2 py-0.5 rounded">ofertas/</code>.
+                Coloque o PDF na mesma pasta com o nome informado abaixo.
+            </p>
+        </div>
+
+        <form id="formOfertas" class="bg-white border-[3px] border-kenneli-dark rounded-[36px] p-8 md:p-10 space-y-6 shadow-xl shadow-kenneli-dark/5">
+            <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input id="ativo" type="checkbox" class="w-5 h-5 accent-kenneli-dark">
+                <span class="font-bold">Promoção ativa (mostrar botão de download no site)</span>
+            </label>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <label class="block">
+                    <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Mês</span>
+                    <input id="mes" type="text" value="Julho 2026" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent" required>
+                </label>
+                <label class="block">
+                    <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Atualizado em (AAAA-MM-DD)</span>
+                    <input id="atualizado_em" type="date" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent">
+                </label>
+            </div>
+
+            <label class="block">
+                <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Título</span>
+                <input id="titulo" type="text" value="Ofertas do Mês" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent" required>
+            </label>
+
+            <label class="block">
+                <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Subtítulo</span>
+                <input id="subtitulo" type="text" value="Condições especiais para abastecer o seu negócio." class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent">
+            </label>
+
+            <label class="block">
+                <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Descrição</span>
+                <textarea id="descricao" rows="3" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent resize-none">Baixe o catálogo promocional e fale com o televendas para condições comerciais e disponibilidade.</textarea>
+            </label>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <label class="block">
+                    <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Nome do PDF na pasta ofertas/</span>
+                    <input id="arquivo" type="text" value="catalogo-promocional.pdf" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent" required>
+                </label>
+                <label class="block">
+                    <span class="block text-[10px] uppercase tracking-widest font-black text-kenneli-dark/60 mb-2">Texto do botão</span>
+                    <input id="botao" type="text" value="Baixar catálogo PDF" class="w-full rounded-2xl border-2 border-kenneli-dark/15 px-4 py-3 font-medium outline-none focus:border-kenneli-accent">
+                </label>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <button type="submit" class="bg-kenneli-accent text-kenneli-dark px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-download"></i> Baixar config.json
+                </button>
+                <a href="ofertas.html" target="_blank" class="border-2 border-kenneli-dark text-kenneli-dark px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center justify-center gap-3">
+                    Ver página pública
+                </a>
+            </div>
+        </form>
+
+        <div class="mt-8 bg-kenneli-light border-2 border-kenneli-dark/10 rounded-3xl p-6 text-sm font-medium text-kenneli-dark/80 leading-relaxed">
+            <p class="font-black uppercase tracking-widest text-[10px] text-kenneli-dark/50 mb-3">Checklist do mês</p>
+            <ol class="list-decimal pl-5 space-y-2">
+                <li>Coloque o PDF em <strong>ofertas/</strong> com o nome informado acima.</li>
+                <li>Baixe o <strong>config.json</strong> e substitua <strong>ofertas/config.json</strong>.</li>
+                <li>Publique/envie esses 2 arquivos para o site.</li>
+                <li>Abra <a class="underline font-bold" href="ofertas.html" target="_blank">ofertas.html</a> e confirme o botão de download.</li>
+            </ol>
+            <p class="mt-4 text-kenneli-dark/60">Instruções completas: <code>ofertas/COMO-ATUALIZAR.md</code></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('formOfertas');
+        const fields = ['mes', 'titulo', 'subtitulo', 'descricao', 'arquivo', 'botao', 'atualizado_em'];
+
+        async function preload() {
+            try {
+                const res = await fetch('ofertas/config.json', { cache: 'no-store' });
+                if (!res.ok) return;
+                const cfg = await res.json();
+                document.getElementById('ativo').checked = Boolean(cfg.ativo);
+                fields.forEach((id) => {
+                    if (cfg[id] != null) document.getElementById(id).value = cfg[id];
+                });
+            } catch (_) {}
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const cfg = {
+                ativo: document.getElementById('ativo').checked,
+                mes: document.getElementById('mes').value.trim(),
+                titulo: document.getElementById('titulo').value.trim(),
+                subtitulo: document.getElementById('subtitulo').value.trim(),
+                descricao: document.getElementById('descricao').value.trim(),
+                arquivo: document.getElementById('arquivo').value.trim(),
+                botao: document.getElementById('botao').value.trim() || 'Baixar catálogo PDF',
+                atualizado_em: document.getElementById('atualizado_em').value.trim(),
+            };
+
+            const blob = new Blob([JSON.stringify(cfg, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'config.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        preload();
+    </script>
+</body>
+</html>

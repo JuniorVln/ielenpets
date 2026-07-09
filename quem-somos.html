@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Ielenpet</title>
+    <meta name="description" content="Fundada em 2001, a Ielenpet é uma distribuidora especializada em produtos para o mercado pet, com mais de 4 mil itens em estoque.">
+    <meta name="author" content="Ielenpet">
+    <meta property="og:title" content="Quem Somos - Ielenpet">
+    <meta property="og:description" content="Há mais de 25 anos distribuindo qualidade, fortalecendo parcerias e impulsionando o mercado pet.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kenneli: {
+                            bg: '#effaf8',
+                            dark: '#24716d',
+                            darker: '#123f3c',
+                            accent: '#7ec9c4',
+                            light: '#d7f1ef',
+                            white: '#f7fffd'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #effaf8; color: #24716d; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden relative bg-kenneli-bg">
+
+    <i class="fa-solid fa-paw absolute top-32 left-10 opacity-5 text-[140px] text-kenneli-dark -rotate-12 z-0"></i>
+    <i class="fa-solid fa-paw absolute top-[720px] right-12 opacity-5 text-[180px] text-kenneli-dark rotate-45 z-0"></i>
+
+    <header class="container max-w-[1440px] mx-auto px-6 pt-1 pb-3 flex justify-between items-center relative z-50">
+        <a href="index.html" class="flex items-center">
+            <img src="LOGO IELENPET 2001.png" alt="Ielenpet Logo" class="h-20 md:h-28 object-contain">
+        </a>
+
+        <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-kenneli-dark">
+            <a href="index.html" class="hover:text-kenneli-accent transition-colors">Início</a>
+            <a href="quem-somos.html" class="text-kenneli-accent transition-colors">Quem Somos</a>
+            <a href="catalogo.html" class="hover:text-kenneli-accent transition-colors">Produtos</a>
+            <a href="ofertas.html" class="hover:text-kenneli-accent transition-colors">Ofertas do Mês</a>
+        </nav>
+
+        <a href="contato.html" class="hidden md:inline-block bg-kenneli-accent text-kenneli-dark px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+        <button id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-xl hover:bg-kenneli-dark hover:text-white transition-colors">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 z-[100] hidden md:hidden" aria-hidden="true">
+        <div class="absolute inset-0 bg-kenneli-darker/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" data-menu-close></div>
+        <nav id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-[82%] max-w-sm bg-kenneli-bg shadow-2xl flex flex-col p-8 translate-x-full transition-transform duration-300 ease-out">
+            <div class="flex items-center justify-between mb-10">
+                <img src="LOGO IELENPET 2001.png" alt="Ielenpet" class="h-16 object-contain">
+                <button type="button" aria-label="Fechar menu" data-menu-close class="w-11 h-11 inline-flex items-center justify-center rounded-2xl border-2 border-kenneli-dark text-kenneli-dark text-lg hover:bg-kenneli-dark hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="flex flex-col text-base font-bold uppercase tracking-widest text-kenneli-dark">
+                <a href="index.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Início</a>
+                <a href="quem-somos.html" class="py-4 border-b border-kenneli-dark/10 text-kenneli-accent transition-colors">Quem Somos</a>
+                <a href="catalogo.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Produtos</a>
+                <a href="ofertas.html" class="py-4 border-b border-kenneli-dark/10 hover:text-kenneli-accent transition-colors">Ofertas do Mês</a>
+            </div>
+            <a href="contato.html" class="mt-8 bg-kenneli-accent text-kenneli-dark text-center px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-kenneli-dark hover:text-white transition-all">Contato</a>
+            <div class="mt-auto pt-10 flex items-center gap-6 text-2xl text-kenneli-dark/60">
+                <a href="https://wa.me/5541995950968" aria-label="WhatsApp" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/ielenpet" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-kenneli-dark transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section class="container max-w-[1440px] mx-auto px-6 pt-12 pb-16 relative">
+            <div class="border-[3px] border-kenneli-dark rounded-3xl p-6 mb-8 inline-block relative">
+                <i class="fa-solid fa-building absolute -top-4 -left-4 text-3xl text-kenneli-dark bg-kenneli-bg px-2"></i>
+                <h3 class="font-heading text-xl font-bold text-kenneli-dark">Quem Somos</h3>
+            </div>
+            <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-black text-kenneli-dark leading-[0.9] tracking-tight mb-6 max-w-4xl">
+                Há mais de 25 anos movendo o mercado pet.
+            </h1>
+            <p class="text-kenneli-dark/80 text-lg md:text-xl max-w-3xl font-medium leading-relaxed">
+                Ielenpet. Há mais de 25 anos distribuindo qualidade, fortalecendo parcerias e impulsionando o mercado pet.
+            </p>
+        </section>
+
+        <section id="historia" class="container max-w-[1440px] mx-auto px-6 py-20 border-t border-kenneli-dark/10">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <span class="uppercase tracking-widest text-[11px] font-black text-kenneli-dark/50 mb-3 block">NOSSA HISTÓRIA</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-black text-kenneli-dark leading-[0.95] mb-8">
+                        Trajetória construída em parceria
+                    </h2>
+                </div>
+                <div class="space-y-6 text-kenneli-dark/80 text-lg leading-relaxed font-medium">
+                    <p>Fundada em 2001, a Ielenpet é uma distribuidora especializada em produtos para o mercado pet, atuando como parceira estratégica de pet shops, agropecuárias, clínicas veterinárias, casas de ração e demais estabelecimentos do segmento.</p>
+                    <p>Nossa missão é conectar as principais indústrias aos nossos clientes, oferecendo um atendimento próximo, um catálogo completo e uma logística eficiente para que cada parceiro tenha acesso aos melhores produtos do mercado.</p>
+                    <p>Hoje contamos com mais de 4.000 produtos em estoque, reunindo marcas reconhecidas nacionalmente em categorias como alimentação, medicamentos, higiene, acessórios, aquarismo, jardinagem e muito mais.</p>
+                    <p>Ao longo de nossa trajetória, construímos relações baseadas em confiança, transparência e compromisso. Mais do que distribuir produtos, buscamos contribuir para o crescimento de cada negócio que atendemos, oferecendo soluções que agregam valor ao dia a dia de nossos parceiros.</p>
+                    <p>Seguimos evoluindo, investindo em estrutura, tecnologia e atendimento para continuar sendo uma referência na distribuição de produtos pet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="numeros" class="bg-kenneli-dark text-white py-24">
+            <div class="container max-w-[1440px] mx-auto px-6">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <span class="uppercase tracking-widest text-[11px] font-black text-white/50 mb-3 block">EM NÚMEROS</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-black leading-[0.95]">Destaques da nossa operação</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-white/10 rounded-[32px] p-8 text-center border border-white/10">
+                        <h3 class="font-heading text-4xl font-black mb-3">+25</h3>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white/70">Anos de experiência</p>
+                    </div>
+                    <div class="bg-white/10 rounded-[32px] p-8 text-center border border-white/10">
+                        <h3 class="font-heading text-4xl font-black mb-3">+4.000</h3>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white/70">Produtos em estoque</p>
+                    </div>
+                    <div class="bg-white/10 rounded-[32px] p-8 text-center border border-white/10">
+                        <h3 class="font-heading text-4xl font-black mb-3">Centenas</h3>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white/70">De clientes atendidos</p>
+                    </div>
+                    <div class="bg-white/10 rounded-[32px] p-8 text-center border border-white/10">
+                        <h3 class="font-heading text-4xl font-black mb-3">Marcas</h3>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white/70">Líderes do mercado</p>
+                    </div>
+                    <div class="bg-white/10 rounded-[32px] p-8 text-center border border-white/10 sm:col-span-2 lg:col-span-1">
+                        <h3 class="font-heading text-4xl font-black mb-3">Exclusivas</h3>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white/70">Distribuição selecionada</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compromisso" class="container max-w-[1440px] mx-auto px-6 py-24">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="uppercase tracking-widest text-[11px] font-black text-kenneli-dark/50 mb-3 block">NOSSO COMPROMISSO</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-black text-kenneli-dark leading-[0.95] mb-8">
+                        Crescimento dos nossos parceiros
+                    </h2>
+                    <p class="text-kenneli-dark/80 text-lg leading-relaxed font-medium mb-10">
+                        Levar as melhores marcas ao mercado pet com agilidade, confiança e um atendimento que faz a diferença para o crescimento dos nossos parceiros.
+                    </p>
+                    <a href="contato.html" class="inline-block bg-kenneli-accent text-kenneli-dark px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-kenneli-dark hover:text-white transition-all">
+                        Fale Conosco
+                    </a>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="border-[3px] border-kenneli-dark rounded-[32px] p-8">
+                        <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3">Parceria</h3>
+                        <p class="text-sm font-medium text-kenneli-dark/70 leading-relaxed">Atendimento próximo e comprometido com o sucesso de cada cliente.</p>
+                    </div>
+                    <div class="border-[3px] border-kenneli-dark rounded-[32px] p-8">
+                        <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3">Variedade</h3>
+                        <p class="text-sm font-medium text-kenneli-dark/70 leading-relaxed">Mais de 4 mil produtos em estoque em um único fornecedor.</p>
+                    </div>
+                    <div class="border-[3px] border-kenneli-dark rounded-[32px] p-8">
+                        <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3">Agilidade</h3>
+                        <p class="text-sm font-medium text-kenneli-dark/70 leading-relaxed">Logística eficiente para abastecer o seu negócio com rapidez.</p>
+                    </div>
+                    <div class="border-[3px] border-kenneli-dark rounded-[32px] p-8">
+                        <h3 class="font-heading text-2xl font-black text-kenneli-dark mb-3">Confiança</h3>
+                        <p class="text-sm font-medium text-kenneli-dark/70 leading-relaxed">Mais de duas décadas representando grandes marcas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="bg-kenneli-dark text-white py-12 border-b-[6px] border-kenneli-accent">
+        <div class="container max-w-[1440px] mx-auto px-6 flex flex-wrap justify-around items-center font-heading font-black text-3xl md:text-5xl gap-6">
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Parceria</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Variedade</span>
+            <span class="flex items-center gap-4"><i class="fa-solid fa-paw text-kenneli-accent text-3xl"></i> Confiança</span>
+        </div>
+    </div>
+
+    <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
+        <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
+            <div>
+                <img src="LOGO IELENPET 2001.png" alt="Ielenpet" class="h-32 object-contain mb-8">
+                <h2 class="font-heading text-4xl md:text-5xl font-black leading-[0.9] mb-6">Desde 2001, movendo o mercado pet.</h2>
+                <p class="text-white/60 text-sm font-medium max-w-md leading-relaxed">Distribuidora especializada em produtos pet para pet shops, agropecuárias, clínicas e casas de ração.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-10">
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">Atendimento</h4>
+                    <p class="text-sm text-white/60 mb-2 font-medium">Telefones: (41) 3606-9158 / (41) 3621-2194</p>
+                    <p class="text-sm text-white/60 mb-2 font-medium">Televendas: <a href="https://wa.me/5541995950968" class="hover:text-white transition-colors">(41) 99595-0968</a></p>
+                    <p class="text-sm text-white/60 font-medium">Seg-Qui: 07:30 - 17:30 · Sex: 07:30 - 16:30</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-2xl mb-4 text-white">Navegação</h4>
+                    <div class="flex flex-col gap-2 text-sm text-white/60 font-medium">
+                        <a href="index.html" class="hover:text-white transition-colors">Início</a>
+                        <a href="quem-somos.html" class="hover:text-white transition-colors">Quem Somos</a>
+                        <a href="catalogo.html" class="hover:text-white transition-colors">Produtos</a>
+                        <a href="ofertas.html" class="hover:text-white transition-colors">Ofertas do Mês</a>
+                        <a href="contato.html" class="hover:text-white transition-colors">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>
