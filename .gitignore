@@ -1,2 +1,13 @@
 .vercel
 *.pdf
+
+# dependências e build do Studio (Sanity)
+node_modules/
+studio/dist/
+studio/.sanity/
+
+# cache da migração única de produtos — não versionar
+studio/scripts/.sanity-asset-cache.json
+
+# lixo de ferramenta
+.playwright-mcp/

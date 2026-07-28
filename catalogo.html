@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - Ielenpet</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="description" content="Catálogo de produtos Ielenpet com filtros por linha, tipo, fase, porte e marca.">
     <meta name="author" content="Ielenpet">
     <meta property="og:title" content="Catálogo - Ielenpet">
@@ -219,7 +223,7 @@
 
     <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 mix-blend-luminosity">
-            <img src="Fotos opção 03/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
+            <img src="fotos/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
         </div>
 
         <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
@@ -267,9 +271,10 @@
         </div>
     </footer>
 
-    <script src="products.js"></script>
+    <script src="sanity-data.js"></script>
     <script>
-        const PRODUCTS = (window.IELEN_PRODUCTS || []).slice();
+      (async () => {
+        const PRODUCTS = (await loadIelenProducts()).slice();
         const PAGE_SIZE = 60;
 
         const CATEGORY_MAP = {
@@ -442,6 +447,7 @@
         }
 
         render();
+      })();
     </script>
     <script src="menu.js"></script>
 </body>

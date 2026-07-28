@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Ielenpet</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="description" content="Entre em contato com a Ielenpet para atendimento, parcerias e dúvidas sobre produtos para pets.">
     <meta name="author" content="Ielenpet">
     <meta property="og:title" content="Contato - Ielenpet">
@@ -209,7 +213,7 @@
                     </div>
                 </div>
 
-                <form action="https://formspree.io/f/your_form_id" method="POST" class="bg-kenneli-bg rounded-[48px] p-8 md:p-12 shadow-2xl">
+                <form id="form-contato" class="bg-kenneli-bg rounded-[48px] p-8 md:p-12 shadow-2xl">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <label class="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-kenneli-dark/60">
                             Nome
@@ -246,8 +250,12 @@
                     </label>
 
                     <button type="submit" class="bg-kenneli-accent text-kenneli-dark px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-kenneli-dark hover:text-white transition-all inline-flex items-center gap-3">
-                        Enviar Mensagem <i class="fa-solid fa-arrow-right"></i>
+                        Enviar pelo WhatsApp <i class="fa-brands fa-whatsapp text-lg"></i>
                     </button>
+
+                    <p class="text-xs text-kenneli-dark/50 font-medium mt-4">
+                        Ao enviar, abrimos o WhatsApp do televendas com sua mensagem pronta.
+                    </p>
                 </form>
             </div>
         </section>
@@ -291,7 +299,7 @@
 
     <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 mix-blend-luminosity">
-            <img src="Fotos opção 03/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
+            <img src="fotos/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
         </div>
 
         <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
@@ -340,5 +348,32 @@
     </footer>
 
     <script src="menu.js"></script>
+    <script>
+        // Envia o formulário pelo WhatsApp do televendas com a mensagem já montada.
+        (function () {
+            const TELEVENDAS = "5541995950968";
+            const form = document.getElementById("form-contato");
+            if (!form) return;
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const d = new FormData(form);
+                const v = (k) => (d.get(k) || "").toString().trim();
+
+                const linhas = [
+                    "Olá! Vim pelo site da Ielenpet.",
+                    "",
+                    `*Nome:* ${v("name")}`,
+                    `*E-mail:* ${v("email")}`,
+                ];
+                if (v("phone")) linhas.push(`*Telefone:* ${v("phone")}`);
+                linhas.push(`*Assunto:* ${v("subject")}`, "", v("message"));
+
+                const url =
+                    "https://wa.me/" + TELEVENDAS + "?text=" + encodeURIComponent(linhas.join("\n"));
+                window.open(url, "_blank", "noopener");
+            });
+        })();
+    </script>
 </body>
 </html>

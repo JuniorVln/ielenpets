@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ração Ielen Organic Adultos - Ielenpet</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="description" content="Nutrição completa e orgânica para cães adultos de porte médio e grande. Conheça os detalhes do produto na Ielenpet.">
     <meta name="author" content="Ielenpet">
     <meta property="og:title" content="Ração Ielen Organic Adultos - Ielenpet">
@@ -218,7 +222,7 @@
 
     <footer class="bg-kenneli-darker text-white pt-24 pb-16 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 mix-blend-luminosity">
-            <img src="Fotos opção 03/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
+            <img src="fotos/cao_gato-footer.png" class="w-full h-full object-cover object-top" alt="">
         </div>
 
         <div class="container max-w-[1440px] mx-auto px-6 relative z-10 grid md:grid-cols-[0.8fr_1fr] gap-16">
@@ -266,9 +270,10 @@
         </div>
     </footer>
 
-    <script src="products.js"></script>
+    <script src="sanity-data.js"></script>
     <script>
-        const PRODUCTS = window.IELEN_PRODUCTS || [];
+      (async () => {
+        const PRODUCTS = await loadIelenProducts();
         const params = new URLSearchParams(location.search);
         const id = params.get('id');
         const code = params.get('code');
@@ -317,7 +322,7 @@
             }
             document.querySelectorAll('.variant-btn').forEach(b =>
                 b.addEventListener('click', () => selectVariant(b)));
-            if (selLabel) selLabel.textContent = `${p.variants[0].size} · Cód. ${p.variants[0].code}`;
+            if (selLabel && p.variants.length) selLabel.textContent = `${p.variants[0].size} · Cód. ${p.variants[0].code}`;
 
             $('specs').innerHTML = [
                 ['Marca', p.brand],
@@ -340,6 +345,7 @@
                     </div>
                 </a>`).join('');
         }
+      })();
     </script>
     <script src="menu.js"></script>
 </body>
