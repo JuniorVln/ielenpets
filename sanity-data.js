@@ -67,6 +67,7 @@
 
         cache = products;
         window.IELEN_PRODUCTS = products;
+        window.IELEN_READY = true;
         try {
             sessionStorage.setItem(
                 "ielen_products",
@@ -74,5 +75,55 @@
             );
         } catch (_) {}
         return products;
+    };
+
+    // Consulta avulsa — usada pelas páginas que não precisam do catálogo inteiro.
+    async function query(groq) {
+        const res = await fetch(`${BASE}?query=${encodeURIComponent(groq)}`);
+        if (!res.ok) throw new Error("Falha na consulta: " + res.status);
+        return (await res.json()).result;
+    }
+
+    // Textos de um produto só (resumo e "sobre"), buscados sob demanda para não
+    // pesar a query do catálogo, que traz os ~3 mil produtos de uma vez.
+    window.loadIelenProdutoTextos = async function (id) {
+        if (id === undefined || id === null || id === "") return null;
+        const idNum = Number(id);
+        const filtro = Number.isFinite(idNum)
+            ? `productId == ${idNum} || _id == "produto-${idNum}"`
+            : `_id == "${String(id).replace(/"/g, '')}"`;
+        try {
+            return await query(`*[_type=="produto" && (${filtro})][0]{resumo, descricao}`);
+        } catch (e) {
+            console.warn("Textos do produto indisponíveis:", e);
+            return null;
+        }
+    };
+
+    window.loadIelenParceiros = async function () {
+        try {
+            return await query(`*[_type=="parceiros"][0]{
+                titulo,
+                subtitulo,
+                "logos": logos[]{ nome, site, "imagem": logo.asset->url }
+            }`);
+        } catch (e) {
+            console.warn("Parceiros indisponíveis:", e);
+            return null;
+        }
+    };
+
+    window.loadIelenOfertas = async function () {
+        try {
+            return await query(`*[_type=="ofertas"][0]{
+                ativo, mes, titulo, subtitulo, descricao, botao,
+                "arquivo": arquivo.asset->url,
+                "arquivoNome": arquivo.asset->originalFilename,
+                "atualizadoEm": arquivo.asset->_updatedAt
+            }`);
+        } catch (e) {
+            console.warn("Ofertas indisponíveis:", e);
+            return null;
+        }
     };
 })();

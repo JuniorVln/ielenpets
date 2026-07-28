@@ -274,14 +274,14 @@
         <div class="container max-w-[1440px] mx-auto px-6 relative z-10">
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <span class="uppercase tracking-widest text-[11px] font-black text-white/50 mb-3 block">PARCEIROS</span>
-                <h2 class="font-heading text-5xl md:text-6xl font-black text-white leading-[0.9] mb-6">
+                <h2 id="parceirosTitulo" class="font-heading text-5xl md:text-6xl font-black text-white leading-[0.9] mb-6">
                     Principais parceiros da indústria
                 </h2>
-                <p class="text-white/70 text-lg font-medium">
+                <p id="parceirosSubtitulo" class="text-white/70 text-lg font-medium">
                     Trabalhamos com marcas reconhecidas nacionalmente para abastecer o seu negócio com qualidade e variedade.
                 </p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+            <div id="parceirosGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
                 <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 min-h-[120px] flex items-center justify-center border border-white/10">
                     <span class="text-white/50 text-xs font-black uppercase tracking-widest text-center">Logo parceiro</span>
                 </div>
@@ -504,5 +504,30 @@
     </footer>
 
     <script src="menu.js"></script>
+    <script src="sanity-data.js"></script>
+    <script>
+        // Logos dos parceiros vêm do painel. Sem logo cadastrada, a seção
+        // mantém os espaços reservados que já estavam no HTML.
+        (async function carregarParceiros() {
+            if (!window.loadIelenParceiros) return;
+            const dados = await window.loadIelenParceiros();
+            if (!dados) return;
+
+            if (dados.titulo) document.getElementById('parceirosTitulo').textContent = dados.titulo;
+            if (dados.subtitulo) document.getElementById('parceirosSubtitulo').textContent = dados.subtitulo;
+
+            const logos = (dados.logos || []).filter(l => l && l.imagem);
+            if (!logos.length) return;
+
+            const grid = document.getElementById('parceirosGrid');
+            grid.innerHTML = logos.map(l => {
+                const img = `<img src="${l.imagem}?w=400&fm=webp&q=85&fit=max" alt="${(l.nome || 'Parceiro').replace(/"/g, '')}" loading="lazy" class="max-h-16 w-auto object-contain">`;
+                const caixa = `<div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 min-h-[120px] flex items-center justify-center border border-white/10">${img}</div>`;
+                return l.site
+                    ? `<a href="${l.site}" target="_blank" rel="noopener" class="block hover:opacity-80 transition-opacity">${caixa}</a>`
+                    : caixa;
+            }).join('');
+        })();
+    </script>
 </body>
 </html>

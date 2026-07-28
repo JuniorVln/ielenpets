@@ -19,4 +19,12 @@ export const structure: StructureResolver = (S) =>
         .title("Contato & Endereço")
         .id("contato")
         .child(S.document().schemaType("contato").documentId("contato")),
+      S.listItem()
+        .title("Parceiros (logos)")
+        .id("parceiros")
+        .child(S.document().schemaType("parceiros").documentId("parceiros")),
+      S.listItem()
+        .title("Ofertas do Mês")
+        .id("ofertas")
+        .child(S.document().schemaType("ofertas").documentId("ofertas")),
     ]);

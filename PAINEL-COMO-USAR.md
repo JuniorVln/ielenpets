@@ -32,7 +32,46 @@ No menu à esquerda, clique em **Produtos**.
   - Clique em **Publish**.
 - **Excluir** um produto: abra o produto → menu **⋮** (três pontinhos) → **Delete**.
 
-## 3. Editar textos e fotos das páginas
+## 3. Descrição do produto (o texto "Sobre o Produto")
+
+Dentro de cada produto existem dois campos de texto:
+
+- **Resumo** — a frase que aparece logo abaixo do nome do produto.
+- **Sobre o produto** — o texto do bloco "Sobre o Produto", mais abaixo na página.
+
+Os dois são **opcionais**. Se você deixar em branco, o site monta um texto
+automático com a marca e a seção — que é o que aparece hoje. Assim que você
+escrever algo e clicar em **Publish**, o seu texto substitui o automático.
+
+> Para separar parágrafos em "Sobre o produto", **pule uma linha** entre eles.
+
+## 4. Logos dos parceiros
+
+No menu à esquerda: **Parceiros (logos)**.
+
+- Em **Logos dos parceiros**, clique em **Add item** para cada parceiro.
+- Preencha o **Nome**, envie a **Logo** e, se quiser, o **Site** (a logo vira link).
+- A ordem da lista é a ordem que aparece no site — arraste para reordenar.
+- Clique em **Publish**.
+
+> Prefira **PNG com fundo transparente**. A seção fica sobre fundo verde escuro,
+> então logos com fundo branco aparecem dentro de um quadrado branco.
+
+Enquanto não houver nenhuma logo cadastrada, o site mostra os espaços reservados.
+
+## 5. Ofertas do Mês (o PDF para download)
+
+No menu à esquerda: **Ofertas do Mês**.
+
+1. Em **PDF do catálogo promocional**, envie o arquivo.
+2. Preencha o **Mês da promoção** (ex.: "Agosto 2026").
+3. Ligue a chave **Mostrar o download no site**.
+4. Clique em **Publish**.
+
+Para tirar do ar quando a promoção acabar, é só desligar a chave e publicar de
+novo — a página volta a mostrar "Em breve". Não precisa apagar o PDF.
+
+## 6. Editar textos e fotos das páginas
 
 Ainda no menu à esquerda:
 
@@ -40,8 +79,8 @@ Ainda no menu à esquerda:
 - **Quem Somos** — título e os parágrafos da história.
 - **Contato & Endereço** — telefone, WhatsApp, e-mail, endereço e horário.
 
-Edite e clique em **Publish**. (A ligação dessas páginas ao painel está sendo
-finalizada — os **produtos já funcionam 100%**.)
+Edite e clique em **Publish**. (A ligação dessas três páginas ao painel ainda
+está sendo finalizada — os **produtos, parceiros e ofertas já funcionam 100%**.)
 
 ## 4. Dúvidas comuns
 
@@ -67,5 +106,17 @@ finalizada — os **produtos já funcionam 100%**.)
   privado no Sanity, invisível na API pública). `studio/scripts/fix-doc-ids.mjs` renomeia
   para `produto-<n>` preservando edições do painel. Rodar uma vez e validar com
   `count(*[_type=="produto"])` sem token.
+- **Parceiros e Ofertas (28/07):** singletons `parceiros` e `ofertas` criados por
+  `studio/scripts/seed-parceiros-ofertas.mjs` (idempotente). A home lê as logos em
+  `index.html` (grid `#parceirosGrid`, com os placeholders como fallback) e
+  `ofertas.html` lê o PDF do Sanity, caindo em `ofertas/config.json` se não houver
+  nada cadastrado. O PDF agora é asset do Sanity — não precisa mais subir por FTP.
+- **Textos do produto (28/07):** campos `resumo` e `descricao` no schema `produto`.
+  `produto.html` busca esses dois campos numa query avulsa (`loadIelenProdutoTextos`)
+  para não inflar a query do catálogo, que carrega os ~3 mil produtos de uma vez.
+  Ambos têm fallback para o texto automático que já existia.
+- **CORS:** as origens ficam em sanity.io/manage → API → CORS. Para testar local,
+  a origem exata (ex.: `http://localhost:8899`) precisa estar cadastrada, senão o
+  fetch falha e a seção fica no fallback silenciosamente.
 - **Pendente (fase 2):** ligar as páginas estáticas (index/quem-somos/contato) para
   lerem os singletons do painel. Hoje esses textos ainda estão no HTML.

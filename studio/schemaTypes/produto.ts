@@ -40,6 +40,22 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "resumo",
+      title: "Resumo (aparece logo abaixo do nome)",
+      type: "text",
+      rows: 3,
+      description:
+        "Frase curta de apresentação do produto. Se deixar vazio, o site monta uma frase automática com a marca e a seção.",
+    }),
+    defineField({
+      name: "descricao",
+      title: "Sobre o produto",
+      type: "text",
+      rows: 8,
+      description:
+        'Texto do bloco "Sobre o Produto". Pule uma linha para separar parágrafos. Se deixar vazio, o site usa um texto padrão.',
+    }),
+    defineField({
       name: "section",
       title: "Seção",
       type: "string",

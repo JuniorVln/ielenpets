@@ -169,6 +169,7 @@
     </footer>
 
     <script src="menu.js"></script>
+    <script src="sanity-data.js"></script>
     <script>
         (async function loadOfertas() {
             const mesEl = document.getElementById('ofertaMes');
@@ -182,9 +183,35 @@
             const emBreveEl = document.getElementById('ofertaEmBreve');
 
             try {
-                const res = await fetch('ofertas/config.json', { cache: 'no-store' });
-                if (!res.ok) throw new Error('config não encontrado');
-                const cfg = await res.json();
+                // Fonte principal: o painel (Sanity), onde a cliente sobe o PDF.
+                // Se ainda não houver nada cadastrado lá, cai no config.json antigo.
+                let cfg = null;
+                let arquivoUrl = null;
+
+                if (window.loadIelenOfertas) {
+                    const s = await window.loadIelenOfertas();
+                    if (s && (s.arquivo || s.titulo || s.mes)) {
+                        cfg = {
+                            ativo: s.ativo,
+                            mes: s.mes,
+                            titulo: s.titulo,
+                            subtitulo: s.subtitulo,
+                            descricao: s.descricao,
+                            botao: s.botao,
+                            arquivo: s.arquivoNome || 'catalogo-promocional.pdf',
+                            atualizado_em: s.atualizadoEm
+                                ? new Date(s.atualizadoEm).toLocaleDateString('pt-BR')
+                                : ''
+                        };
+                        arquivoUrl = s.arquivo || null;
+                    }
+                }
+
+                if (!cfg) {
+                    const res = await fetch('ofertas/config.json', { cache: 'no-store' });
+                    if (!res.ok) throw new Error('config não encontrado');
+                    cfg = await res.json();
+                }
 
                 if (cfg.mes) mesEl.textContent = cfg.mes;
                 if (cfg.titulo) tituloEl.textContent = cfg.titulo;
@@ -198,9 +225,9 @@
                     atualizadoEl.textContent = cfg.mes;
                 }
 
-                const ativo = Boolean(cfg.ativo) && Boolean(cfg.arquivo);
+                const ativo = Boolean(cfg.ativo) && Boolean(arquivoUrl || cfg.arquivo);
                 if (ativo) {
-                    downloadEl.href = `ofertas/${cfg.arquivo}`;
+                    downloadEl.href = arquivoUrl || `ofertas/${cfg.arquivo}`;
                     downloadEl.setAttribute('download', cfg.arquivo);
                     downloadEl.classList.remove('hidden');
                     emBreveEl.classList.add('hidden');

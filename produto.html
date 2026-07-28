@@ -294,6 +294,25 @@
             $('title').textContent = p.name;
             $('intro').textContent = `${p.name} — ${p.brand}${p.section ? ' · ' + p.section : ''}. Disponível no catálogo Ielenpet; fale conosco para condições comerciais.`;
 
+            // Resumo e "Sobre o produto" são editáveis no painel; quando estiverem
+            // preenchidos, substituem os textos automáticos montados aqui.
+            if (window.loadIelenProdutoTextos) {
+                window.loadIelenProdutoTextos(p.id).then(t => {
+                    if (!t) return;
+                    if (t.resumo && t.resumo.trim()) {
+                        $('intro').textContent = t.resumo.trim();
+                    }
+                    if (t.descricao && t.descricao.trim()) {
+                        $('desc').innerHTML = t.descricao
+                            .split(/\n\s*\n/)
+                            .map(par => par.trim())
+                            .filter(Boolean)
+                            .map(par => `<p>${par.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>')}</p>`)
+                            .join('');
+                    }
+                });
+            }
+
             const img = $('mainImage');
             img.src = p.image;
             img.alt = p.name;
