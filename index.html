@@ -521,8 +521,11 @@
 
             const grid = document.getElementById('parceirosGrid');
             grid.innerHTML = logos.map(l => {
-                const img = `<img src="${l.imagem}?w=400&fm=webp&q=85&fit=max" alt="${(l.nome || 'Parceiro').replace(/"/g, '')}" loading="lazy" class="max-h-16 w-auto object-contain">`;
-                const caixa = `<div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 min-h-[120px] flex items-center justify-center border border-white/10">${img}</div>`;
+                // As logos vêm em PNG quadrado, mas o desenho costuma ser uma faixa
+                // horizontal no meio. Limitar pela altura encolhia tudo: por isso a
+                // imagem ocupa o quadrado inteiro e o object-contain cuida da proporção.
+                const img = `<img src="${l.imagem}?w=600&fm=webp&q=85&fit=max" alt="${(l.nome || 'Parceiro').replace(/"/g, '')}" loading="lazy" class="w-full h-full object-contain">`;
+                const caixa = `<div class="bg-white/10 backdrop-blur-md rounded-3xl p-4 aspect-square flex items-center justify-center border border-white/10">${img}</div>`;
                 return l.site
                     ? `<a href="${l.site}" target="_blank" rel="noopener" class="block hover:opacity-80 transition-opacity">${caixa}</a>`
                     : caixa;
