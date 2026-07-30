@@ -74,6 +74,38 @@
             writing-mode: vertical-rl;
         }
 
+        /* Carrossel das logos de parceiros: a lista é duplicada no JS e a faixa
+           anda -50%, então o recomeço cai exatamente onde a primeira cópia estava
+           e o giro não tem emenda. */
+        .parceiros-marquee-wrap {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+        }
+
+        .parceiros-marquee {
+            animation: parceiros-marquee var(--marquee-dur, 40s) linear infinite;
+            will-change: transform;
+        }
+
+        .parceiros-marquee-wrap:hover .parceiros-marquee {
+            animation-play-state: paused;
+        }
+
+        @keyframes parceiros-marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .parceiros-marquee {
+                animation: none;
+            }
+            .parceiros-marquee-wrap {
+                overflow-x: auto;
+            }
+        }
+
         .category-card {
             transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
         }
@@ -520,18 +552,34 @@
             if (!logos.length) return;
 
             const grid = document.getElementById('parceirosGrid');
-            grid.innerHTML = logos.map(l => {
+
+            const card = (l) => {
                 // As logos vêm em PNG quadrado, mas o desenho costuma ser uma faixa
                 // horizontal no meio. Limitar pela altura encolhia tudo: por isso a
                 // imagem ocupa o quadrado inteiro e o object-contain cuida da proporção.
                 const img = `<img src="${l.imagem}?w=600&fm=webp&q=85&fit=max" alt="${(l.nome || 'Parceiro').replace(/"/g, '')}" loading="lazy" class="w-full h-full object-contain">`;
                 // Fundo quase branco: várias logos têm traço escuro e desapareciam
                 // sobre o verde da seção quando a caixa era translúcida.
-                const caixa = `<div class="bg-white/70 backdrop-blur-md rounded-3xl p-4 aspect-square flex items-center justify-center border border-white/30">${img}</div>`;
+                // O espaçamento vai como margem em cada card (e não como gap do
+                // flex) para que cada metade da faixa meça exatamente N*(card+margem).
+                // Assim o -50% da animação cai no ponto certo e o giro não dá salto.
+                const caixa = `<div class="w-36 md:w-44 aspect-square bg-white/70 backdrop-blur-md rounded-3xl p-4 flex items-center justify-center border border-white/30">${img}</div>`;
+                const externo = 'shrink-0 mr-5 block';
                 return l.site
-                    ? `<a href="${l.site}" target="_blank" rel="noopener" class="block hover:opacity-80 transition-opacity">${caixa}</a>`
-                    : caixa;
-            }).join('');
+                    ? `<a href="${l.site}" target="_blank" rel="noopener" class="${externo} hover:opacity-80 transition-opacity">${caixa}</a>`
+                    : `<div class="${externo}">${caixa}</div>`;
+            };
+
+            const lista = logos.map(card).join('');
+            const duracao = Math.max(20, logos.length * 4);
+
+            grid.removeAttribute('class');
+            grid.classList.add('parceiros-marquee-wrap');
+            grid.innerHTML =
+                `<div class="parceiros-marquee flex w-max" style="--marquee-dur:${duracao}s">` +
+                `<div class="flex shrink-0">${lista}</div>` +
+                `<div class="flex shrink-0" aria-hidden="true">${lista}</div>` +
+                `</div>`;
         })();
     </script>
 </body>
