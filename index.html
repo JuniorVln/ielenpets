@@ -525,7 +525,9 @@
                 // horizontal no meio. Limitar pela altura encolhia tudo: por isso a
                 // imagem ocupa o quadrado inteiro e o object-contain cuida da proporção.
                 const img = `<img src="${l.imagem}?w=600&fm=webp&q=85&fit=max" alt="${(l.nome || 'Parceiro').replace(/"/g, '')}" loading="lazy" class="w-full h-full object-contain">`;
-                const caixa = `<div class="bg-white/10 backdrop-blur-md rounded-3xl p-4 aspect-square flex items-center justify-center border border-white/10">${img}</div>`;
+                // Fundo quase branco: várias logos têm traço escuro e desapareciam
+                // sobre o verde da seção quando a caixa era translúcida.
+                const caixa = `<div class="bg-white/90 backdrop-blur-md rounded-3xl p-4 aspect-square flex items-center justify-center border border-white/30">${img}</div>`;
                 return l.site
                     ? `<a href="${l.site}" target="_blank" rel="noopener" class="block hover:opacity-80 transition-opacity">${caixa}</a>`
                     : caixa;
