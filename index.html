@@ -339,11 +339,11 @@
     <!-- 5. Novidades -->
     <section id="produtos" class="container max-w-[1440px] mx-auto px-6 py-24">
         <div class="text-center mb-20 max-w-2xl mx-auto">
-            <h2 class="font-heading text-5xl md:text-6xl font-black text-kenneli-dark mb-4">Novidades</h2>
-            <p class="text-kenneli-dark/70 font-medium text-lg">Os lançamentos e novos produtos que chegam para impulsionar o seu negócio.</p>
+            <h2 id="novidadesTitulo" class="font-heading text-5xl md:text-6xl font-black text-kenneli-dark mb-4">Novidades</h2>
+            <p id="novidadesSubtitulo" class="text-kenneli-dark/70 font-medium text-lg">Os lançamentos e novos produtos que chegam para impulsionar o seu negócio.</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+
+        <div id="novidadesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
             
             <div class="flex flex-col gap-8">
                 <a href="catalogo.html" class="block h-96 rounded-[50px] overflow-hidden bg-white shadow-xl shadow-kenneli-dark/5 p-2 flex items-center justify-center relative group">
@@ -580,6 +580,46 @@
                 `<div class="flex shrink-0">${lista}</div>` +
                 `<div class="flex shrink-0" aria-hidden="true">${lista}</div>` +
                 `</div>`;
+        })();
+
+        // Novidades (produtos em destaque) vêm do painel. Sem itens cadastrados,
+        // a seção mantém os espaços reservados que já estavam no HTML.
+        (async function carregarNovidades() {
+            if (!window.loadIelenNovidades) return;
+            const dados = await window.loadIelenNovidades();
+            if (!dados) return;
+
+            if (dados.titulo) document.getElementById('novidadesTitulo').textContent = dados.titulo;
+            if (dados.subtitulo) document.getElementById('novidadesSubtitulo').textContent = dados.subtitulo;
+
+            const itens = (dados.itens || []).filter(i => i && i.imagem && i.nome);
+            if (!itens.length) return;
+
+            const esc = (t) => String(t || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+            const card = (item, i) => {
+                const link = esc(item.link || 'catalogo.html');
+                const selo = esc(item.selo || 'Novo');
+                const nome = esc(item.nome);
+                const descricao = esc(item.descricao || '');
+                // Colunas alternadas descem (md:mt-32) pra manter o zigue-zague do layout.
+                const stagger = i % 2 === 1 ? ' md:mt-32' : '';
+                return `
+            <div class="flex flex-col gap-8${stagger}">
+                <a href="${link}" class="block h-96 rounded-[50px] overflow-hidden bg-white shadow-xl shadow-kenneli-dark/5 p-2 flex items-center justify-center relative group">
+                    <span class="absolute top-6 left-6 bg-kenneli-dark text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest z-20">${selo}</span>
+                    <img src="${item.imagem}?w=900&fm=webp&q=85&fit=max" loading="lazy" alt="${nome}" class="w-full h-full object-cover rounded-[40px] group-hover:scale-110 transition-transform duration-700">
+                </a>
+                <div>
+                    <span class="uppercase tracking-widest text-[11px] font-black text-kenneli-dark/50 block mb-3">NOVIDADE</span>
+                    <h3 class="font-heading text-4xl lg:text-5xl font-black text-kenneli-dark leading-[0.9] mb-6">${nome}</h3>
+                    ${descricao ? `<p class="text-kenneli-dark/70 font-medium mb-6">${descricao}</p>` : ''}
+                    <a href="${link}" class="text-kenneli-dark font-black uppercase tracking-widest text-xs border-b-2 border-kenneli-accent hover:text-kenneli-accent transition-all">Ver no catálogo</a>
+                </div>
+            </div>`;
+            };
+
+            document.getElementById('novidadesGrid').innerHTML = itens.map(card).join('');
         })();
     </script>
 </body>

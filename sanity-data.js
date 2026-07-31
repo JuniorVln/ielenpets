@@ -113,6 +113,19 @@
         }
     };
 
+    window.loadIelenNovidades = async function () {
+        try {
+            return await query(`*[_type=="novidades"][0]{
+                titulo,
+                subtitulo,
+                "itens": itens[]{ nome, descricao, selo, link, "imagem": imagem.asset->url }
+            }`);
+        } catch (e) {
+            console.warn("Novidades indisponíveis:", e);
+            return null;
+        }
+    };
+
     window.loadIelenOfertas = async function () {
         try {
             return await query(`*[_type=="ofertas"][0]{
