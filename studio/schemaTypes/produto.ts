@@ -13,6 +13,7 @@ export const SECOES = [
   "Peixes",
   "Petiscos",
   "Rações",
+  "Répteis",
   "Roedores",
 ];
 
